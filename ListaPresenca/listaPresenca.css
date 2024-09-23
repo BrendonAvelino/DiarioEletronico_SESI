@@ -1,0 +1,48 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+
+/* input pesquisa */
+#formPesquisa{
+    display: flex;
+    border: 2px solid #E5383B;
+    border-radius: 35px;
+    width: 16%;
+    padding: 0.5%;
+    align-items: center;
+}
+
+.material-icons{
+    background-color: #E5383B;
+    padding: 8px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+}
+
+#inputPesquisa{
+    border: none;
+    outline: none;
+    font-size: 15px;
+    margin: 0 0 0 10px;
+}
+/* fim input pesquisa */
+
+
+/* box icons */
+#boxIcon{
+    display: flex;
+    align-items: center;
+    gap: 1%;
+    
+}
+.imgIcon{
+    width: 2%;
+    height: 2%;
+}
+
+.titleBoxIcon{
+    color: #E5383B;
+}
