@@ -65,6 +65,10 @@ body {
     max-height: 480px;
 }
 
+#statsRow {
+    color: transparent;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
