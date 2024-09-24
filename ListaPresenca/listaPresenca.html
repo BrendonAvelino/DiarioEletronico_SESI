@@ -21,10 +21,11 @@
 
         <form action="" id="formPesquisa">
             <input type="text" id="inputPesquisa" name="Pesquisa" placeholder="Procurar">
-            <span class="material-icons">search</span>
+            <span class="material-icons" id="iconSearch">search</span>
         </form>
 
         <div id="aside_BoxIcon">
+
             <div id="boxIcon">
                 <img class="imgIcon" src="icon/icon01.png" alt="">
                 <h1 class="titleBoxIcon">Presença</h1>
@@ -59,6 +60,24 @@
                 <img class="imgIcon" src="icon/icon07.png" alt="">
                 <h1 class="titleBoxIcon">Mapeamento</h1>
             </div>
+        </div>
+
+
+        <div class="input-container">
+            <button class="custom-input" onclick="toggleDropdown()">
+              3ºB E.M - Língua Portuguesa
+              <span class="arrow">&#x25BC;</span>
+            </button> 
+            <ul class="dropdown" id="dropdown">
+              <li>3ºB E.M -</li>
+              <li>3ºB E.M -</li>
+            </ul>
+          </div>
+          
+
+        <div id="sair">
+            <i class="material-icons" id="iconExit" style="font-size: 36px;">exit_to_app</i>
+            <h1>Sair da Conta</h1>
         </div>
     </aside>
 

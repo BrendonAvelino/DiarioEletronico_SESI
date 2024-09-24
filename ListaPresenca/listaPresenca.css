@@ -4,6 +4,9 @@ body{
     display: flex;
 }
 
+
+/* Começo aside Sesi */
+
 #asideSesi{
     width: 21%;
     display: flex;
@@ -14,7 +17,12 @@ body{
 #logoSesi{
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
+
+
+
+
 /* input pesquisa */
 #formPesquisa{
     display: flex;   
@@ -22,10 +30,10 @@ body{
     border-radius: 35px;
     padding: 1.5%;
     align-items: center;
-    margin: 10px 0 10px 0;
+    margin: 10px 0 20px 0;
 }
 
-.material-icons{
+#iconSearch{
     background-color: #E5383B;
     padding: 5px;
     border-radius: 50%;
@@ -42,6 +50,8 @@ body{
 /* fim input pesquisa */
 
 
+
+
 /* box icons */
 #aside_BoxIcon{
     display: flex;
@@ -51,12 +61,18 @@ body{
 
 #boxIcon{
     display: flex;
-    align-items: center;   
+    align-items: center;
+    border-radius: 10px;
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+}
 
+#boxIcon:hover{
+    background-color: #D3D3D3;
 }
 
 .titleBoxIcon{
-    font-size: 20px;
+    font-size: 18px;
     color: #E5383B;
 }
 
@@ -66,9 +82,88 @@ body{
 /* fim box icons */
 
 
+
+/* input container */
+.input-container {
+    margin-top: 25px;
+    display: inline-block;
+    position: relative; /* necessário para o posicionamento do dropdown */
+  }
+  
+  .custom-input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #6e6e6e;
+    background-color: white;
+    border: 1px solid #f44336;
+    border-radius: 5px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    min-width: 200px;
+    justify-content: space-between;
+  }
+  
+  .custom-input .arrow {
+    font-size: 12px;
+    margin-left: 10px;
+    color: #6e6e6e;
+  }
+  
+  .dropdown {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #f44336;
+    border-radius: 5px;
+    background-color: white;
+    position: absolute;
+    top: 100%; /* faz o dropdown aparecer logo abaixo do botão */
+    left: 0;
+    width: 100%;
+    display: none; /* inicialmente escondido */
+    z-index: 1;
+  }
+  
+  .dropdown li {
+    padding: 8px 10px;
+    color: #6e6e6e;
+    cursor: pointer;
+  }
+  
+  .dropdown li:hover {
+    background-color: #D3D3D3;
+  }
+/* fim input container */
+
+
+
 /* linha vertical */
 .linha-vertical {
     width: 2px;
     background-color: #ccc;
     height: 97vh;
   }
+/* fim linha vertical */
+
+
+/* Sair */
+#sair{
+    display: flex;
+    align-items: center;
+    background-color: #E5383B;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    border-radius: 10px;
+    padding: 2px 10px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+#iconExit{
+    margin-right: 8px;
+}
+/* fim Sair */
