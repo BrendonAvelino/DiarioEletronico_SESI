@@ -1,10 +1,8 @@
-// Função que alterna a visibilidade do dropdown
 function toggleDropdown() {
   const dropdown = document.getElementById("dropdown");
   dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 }
 
-// Fechar o dropdown ao clicar fora
 window.onclick = function (event) {
   if (!event.target.matches('.custom-input')) {
     const dropdown = document.getElementById("dropdown");
@@ -23,7 +21,7 @@ document.querySelectorAll('.dropdown li').forEach(item => {
   });
 });
 
-// Ajuste da altura do container
+// Ajuste da altura do container ( rolagem )
 function adjustTableContainerHeight() {
   const dropdown = document.getElementById("dropdown");
   dropdown.style.maxHeight = '100px';
