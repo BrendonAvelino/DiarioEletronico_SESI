@@ -110,7 +110,7 @@ tbody tr:hover {
 }
 
 
-/* Modal */
+/* Estilo do modal */
 .modal {
     display: none;
     position: fixed;
@@ -152,7 +152,7 @@ tbody tr:hover {
   }
 
 
-/* Estilo do modal */
+
 button {
     background-color: #E5383B;
     color: white;
