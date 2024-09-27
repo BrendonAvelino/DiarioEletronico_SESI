@@ -48,39 +48,74 @@ window.addEventListener('resize', adjustTableContainerHeight);
 
 
 // calendario
-const calendario = document.getElementById("calendario");
+document.addEventListener('DOMContentLoaded', function() {
+  const calendarElement = document.getElementById('calendario');
+  const currentMonthElement = document.getElementById('current-month');
+  const prevMonthButton = document.getElementById('prev-month');
+  const nextMonthButton = document.getElementById('next-month');
 
-const createCalendario = (month, year) => {
-    calendario.innerHTML = ""; // Limpa o calendário antes de preenchê-lo
+  let selectedDate = null;
+  let currentDate = new Date();
 
-    const daysOfWeek = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
-    let daysInMonth = new Date(year, month + 1, 0).getDate(); // Dias no mês atual
-    let firstDay = new Date(year, month, 1).getDay(); // Primeiro dia da semana
+  function generateCalendar(date) {
+    calendarElement.innerHTML = `
+      <div class="day-header">D</div>
+      <div class="day-header">S</div>
+      <div class="day-header">T</div>
+      <div class="day-header">Q</div>
+      <div class="day-header">Q</div>
+      <div class="day-header">S</div>
+      <div class="day-header">S</div>
+    `;
 
-    // Cabeçalhos dos dias da semana
-    daysOfWeek.forEach(day => {
-        const dayHeader = document.createElement('div');
-        dayHeader.classList.add('day', 'day-header');
-        dayHeader.innerText = day;
-        calendario.appendChild(dayHeader);
-    });
+    const year = date.getFullYear();
+    const month = date.getMonth();
 
-    // Adiciona dias em branco para alinhar o primeiro dia do mês corretamente
+    currentMonthElement.textContent = date.toLocaleString('default', { month: 'long', year: 'numeric' });
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const lastDate = new Date(year, month + 1, 0).getDate();
+
+    // Preenche os dias anteriores ao primeiro dia do mês
     for (let i = 0; i < firstDay; i++) {
-        const emptyDay = document.createElement('div');
-        emptyDay.classList.add('day');
-        calendario.appendChild(emptyDay);
+      calendarElement.innerHTML += `<div class="day"></div>`;
     }
 
-    // Adiciona os dias do mês
-    for (let day = 1; day <= daysInMonth; day++) {
-        const dayElement = document.createElement('div');
-        dayElement.classList.add('day');
-        dayElement.innerText = day;
-        calendario.appendChild(dayElement);
-    }
-};
+    // Preenche os dias do mês
+    for (let day = 1; day <= lastDate; day++) {
+      const dayElement = document.createElement('div');
+      dayElement.classList.add('day');
+      dayElement.textContent = day;
 
-// Inicializa o calendário para o mês atual
-let today = new Date();
-createCalendario(today.getMonth(), today.getFullYear());
+      // Adiciona o evento de clique para selecionar o dia
+      dayElement.addEventListener('click', function() {
+        if (selectedDate) {
+          selectedDate.classList.remove('selected');
+        }
+        dayElement.classList.add('selected');
+        selectedDate = dayElement;
+      });
+
+      calendarElement.appendChild(dayElement);
+    }
+  }
+
+  // Função para navegar para o mês anterior
+  function goToPreviousMonth() {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    generateCalendar(currentDate);
+  }
+
+  // Função para navegar para o próximo mês
+  function goToNextMonth() {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    generateCalendar(currentDate);
+  }
+
+  prevMonthButton.addEventListener('click', goToPreviousMonth);
+  nextMonthButton.addEventListener('click', goToNextMonth);
+
+  // Gera o calendário inicial
+  generateCalendar(currentDate);
+});
+

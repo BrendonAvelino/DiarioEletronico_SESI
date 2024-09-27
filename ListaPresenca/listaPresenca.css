@@ -2,6 +2,9 @@ body{
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     display: flex;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -229,6 +232,7 @@ tbody tr:hover {
 /* botoes Switch */
 /* From Uiverse.io by namecho */ 
 .switch {
+  cursor: pointer;
   --button-width: 3.5em;
   --button-height: 2em;
   --toggle-diameter: 1.5em;
@@ -287,35 +291,61 @@ tbody tr:hover {
 
 
 
- /* Calendario */
+
 /* Calendário */
-#asideCalendario { 
-  width: 21%;          /* Largura do aside */
+#asideCalendario {
+  width: 21%;
+  margin-left: 1.3%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#calendar {
-  width: 100%;         /* O calendário ocupará 100% da largura do aside */
+#calendario {
+  width: 100%;
   border: 1px solid #ccc;
-  font-size: 10px;    
+  display: flex;
+  flex-wrap: wrap; 
+
 }
 
-.day {
-  display: inline-block;
-  width: calc(100% / 7); /* 7 dias por semana */
+.day, .day-header {
+  width: calc(100% / 7); 
   box-sizing: border-box;
   padding: 8px;
   text-align: center;
-  font-size: 12px;      
 }
 
-.day-header {
-  font-weight: bold;
-  background-color: #f4f4f4;
-  font-size: 12px;      
+.day {
+  border: 1px solid #ddd;
+  cursor: pointer;
 }
+
+.day.selected {
+  background-color: #E5383B;
+  color: white;
+}
+
+#calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  margin: 5%;
+  
+}
+
+#prev-month, #next-month {
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#prev-month:hover, #next-month:hover {
+  color: #007BFF;
+}
+
 /* fim Calendário */
 
 
@@ -325,10 +355,12 @@ tbody tr:hover {
   display: grid;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  margin-top: 85%;
 }
 
 #btnSave, #btnSelectionAll{
+  cursor: pointer;
+  margin-top: 3%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -338,7 +370,7 @@ tbody tr:hover {
   color: white;
   font-size: 9px;
   border-radius: 12px;
-  padding: 0 20px;
+  padding: 6px 20px;
 }
 
 .material-symbols-outlined, #btnSelectionAll .switch{

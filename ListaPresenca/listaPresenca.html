@@ -11,6 +11,7 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
 
@@ -664,28 +665,37 @@
     <div class="linha-vertical"></div>
 
     <aside id="asideCalendario">
-        <div id="btnNext_Previous">
-            <button id="prevMonth">Anterior</button>
-            <button id="nextMonth">Próximo</button>
 
-            <script>
-                let currentMonth = today.getMonth();
-                let currentYear = today.getFullYear();
-
-                document.getElementById('prevMonth').addEventListener('click', () => {
-                    currentMonth = currentMonth === 0 ? 11 : currentMonth - 1;
-                    currentYear = currentMonth === 11 ? currentYear - 1 : currentYear;
-                    createCalendar(currentMonth, currentYear);
-                });
-
-                document.getElementById('nextMonth').addEventListener('click', () => {
-                    currentMonth = currentMonth === 11 ? 0 : currentMonth + 1;
-                    currentYear = currentMonth === 0 ? currentYear + 1 : currentYear;
-                    createCalendar(currentMonth, currentYear);
-                });
-            </script>
+        <div id="calendar-controls">
+            <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+            <span id="current-month">Mês Atual</span>
+            <button id="next-month"><i class="fas fa-chevron-right"></i></button>
         </div>
+
         <div id="calendario">
+            <div class="day-header">Dom</div>
+            <div class="day-header">Seg</div>
+            <div class="day-header">Ter</div>
+            <div class="day-header">Qua</div>
+            <div class="day-header">Qui</div>
+            <div class="day-header">Sex</div>
+            <div class="day-header">Sab</div>
+
+            <!-- Os dias do mês serão gerados via JavaScript -->
+        </div>
+
+        <div id="sectionBtnVermelhos"></div>
+        <button id="btnSave">
+            <span class="material-symbols-outlined">check</span>
+            <h1>Salvar</h1>
+        </button>
+        <button id="btnSelectionAll">
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <h1>Selecionar Tudo</h1>
+        </button>
         </div>
     </aside>
 
