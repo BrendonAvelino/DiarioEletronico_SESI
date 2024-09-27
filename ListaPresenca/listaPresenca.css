@@ -88,7 +88,7 @@ body{
 
 /* input container */
 .input-container {
-    margin-top: 25px;
+    margin-top: 8%;
     display: inline-block;
     position: relative; /* necessário para o posicionamento do dropdown */
   }
@@ -141,6 +141,24 @@ body{
   }
 /* fim input container */
 
+/* Sair */
+#sair{
+  display: flex;
+  align-items: center;
+  background-color: #E5383B;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  border-radius: 10px;
+  padding: 2px 10px;
+  margin-top: 8%;
+  cursor: pointer;
+}
+
+#iconExit{
+  margin-right: 8px;
+}
+/* fim Sair */
 
 
 /* linha vertical */
@@ -150,26 +168,6 @@ body{
     height: 97vh;
   }
 /* fim linha vertical */
-
-
-/* Sair */
-#sair{
-    display: flex;
-    align-items: center;
-    background-color: #E5383B;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-size: 12px;
-    border-radius: 10px;
-    padding: 2px 10px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-#iconExit{
-    margin-right: 8px;
-}
-/* fim Sair */
 
 
 /* começo conteudo da Main */
@@ -299,26 +297,37 @@ tbody tr:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 #calendario {
   width: 100%;
-  border: 1px solid #ccc;
-  display: flex;
-  flex-wrap: wrap; 
-
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 colunas para os dias da semana */
+  grid-template-rows: 40px repeat(6, 1fr); /* 1 linha fixa para os headers e 6 linhas flexíveis para os dias */
+  height: 350px; /* Altura total fixa do calendário */
 }
 
-.day, .day-header {
-  width: calc(100% / 7); 
+.day-header {
+  border: 1px solid #ddd;
+  background-color: #f0f0f0;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  height: 40px; /* Altura fixa para os headers */
   box-sizing: border-box;
-  padding: 8px;
-  text-align: center;
 }
 
 .day {
   border: 1px solid #ddd;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 15px;
 }
 
 .day.selected {
@@ -332,7 +341,6 @@ tbody tr:hover {
   align-items: center;
   width: 250px;
   margin: 5%;
-  
 }
 
 #prev-month, #next-month {
@@ -350,15 +358,16 @@ tbody tr:hover {
 
 
 
- /* botoes salvar e selecionar tudo */
-#sectionBtnVermelhos{
-  display: grid;
+#sectionBtnVermelhos {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 85%;
+  margin-top: 50%;
+  font-family: 'Poppins', sans-serif;
 }
 
-#btnSave, #btnSelectionAll{
+#btnSave, #btnSelectionAll {
   cursor: pointer;
   margin-top: 3%;
   display: flex;
@@ -368,12 +377,59 @@ tbody tr:hover {
   background-color: #E5383B;
   border: none;
   color: white;
-  font-size: 9px;
+  font-size: 11px;
   border-radius: 12px;
-  padding: 6px 20px;
+  padding: 8px 20px;
+  position: relative; /* Adicionado para o posicionamento do slider */
 }
 
-.material-symbols-outlined, #btnSelectionAll .switch{
+.material-symbols-outlined {
   margin-right: 10px;
 }
-/* fim dos botoes salvar e selecionar tudo */
+
+/* Estilos do switch do botão de Selecionar Todos */
+.switchAll {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.switchAll input[type="checkbox"] {
+  display: none; /* Ocultar o checkbox */
+}
+
+.switchAll .slider {
+  position: relative;
+  width: 3.5em; /* Largura do slider */
+  height: 2em; /* Altura do slider */
+  background-color: #b4b4b4; /* Cor padrão do slider */
+  border-radius: 50px; /* Borda arredondada */
+  transition: background-color 0.3s; /* Transição suave */
+  margin-right: 10px; /* Espaço entre o switch e o texto */
+}
+
+.switchAll .slider::after {
+  content: ""; /* Criar um elemento após o slider */
+  position: absolute;
+  top: 0.25em; /* Ajuste para centralizar verticalmente */
+  left: 0.25em; /* Ajuste inicial do toggle */
+  width: 1.5em; /* Largura do toggle */
+  height: 1.5em; /* Altura do toggle */
+  background-color: white; /* Cor do toggle */
+  border-radius: 50%; /* Borda arredondada */
+  transition: transform 0.3s; /* Transição suave */
+}
+
+/* Ativar o slider quando o checkbox estiver checado */
+.switchAll input[type="checkbox"]:checked + .slider {
+  background-color: #3bee2a; /* Cor quando ativado */
+}
+
+.switchAll input[type="checkbox"]:checked + .slider::after {
+  transform: translateX(1.5em); /* Mover o toggle para a direita */
+}
+
+/* Efeito ao clicar no checkbox */
+.switchAll input[type="checkbox"]:active + .slider::after {
+  width: calc(1.5em + 0.2em); /* Aumentar o tamanho ao ser clicado */
+}

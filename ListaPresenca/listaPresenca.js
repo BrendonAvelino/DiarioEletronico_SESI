@@ -119,3 +119,17 @@ document.addEventListener('DOMContentLoaded', function() {
   generateCalendar(currentDate);
 });
 
+
+// Ativar/desativar checkbox ao clicar no botão "Selecionar Tudo"
+document.getElementById('btnSelectionAll').addEventListener('click', function() {
+  const checkbox = document.getElementById('selectAllCheckbox');
+  const switches = document.querySelectorAll('.switch input[type="checkbox"]'); 
+  
+  const selectAll = !checkbox.checked; 
+  checkbox.checked = selectAll; 
+
+  // Atualiza o estado de todos os switches
+  switches.forEach(switchCheckbox => {
+    switchCheckbox.checked = selectAll; 
+  });
+});
