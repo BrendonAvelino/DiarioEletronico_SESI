@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// TextDats
+// TextData
    const dataAtual = new Date();
 
    // Extrai o dia, mês e ano
