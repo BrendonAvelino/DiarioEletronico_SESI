@@ -1,0 +1,338 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  display: flex;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Começo aside Sesi */
+
+#asideSesi {
+  width: 21%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#logoSesi {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+
+
+/* input pesquisa */
+#formPesquisa {
+  display: flex;
+  border: 2px solid #E5383B;
+  border-radius: 35px;
+  padding: 1.5%;
+  align-items: center;
+  margin: 10px 0 20px 0;
+}
+
+#iconSearch {
+  background-color: #E5383B;
+  padding: 5px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+}
+
+#inputPesquisa {
+  border: none;
+  outline: none;
+  font-size: 15px;
+  margin: 0 10px 0 10px;
+}
+
+/* fim input pesquisa */
+
+
+
+
+/* box icons */
+#aside_BoxIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#boxIcon {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0 10px 0 10px;
+  cursor: pointer;
+}
+
+#boxIcon:hover {
+  background-color: #D3D3D3;
+}
+
+.titleBoxIcon {
+  font-size: 18px;
+  color: #E5383B;
+}
+
+.imgIcon {
+  margin-right: 18px;
+}
+
+/* fim box icons */
+
+
+
+/* input container */
+.input-container {
+  margin-top: 8%;
+  display: inline-block;
+  position: relative;
+  /* necessário para o posicionamento do dropdown */
+}
+
+.custom-input {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #6e6e6e;
+  background-color: white;
+  border: 1px solid #f44336;
+  border-radius: 5px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  min-width: 200px;
+  justify-content: space-between;
+}
+
+.custom-input .arrow {
+  font-size: 12px;
+  margin-left: 10px;
+  color: #6e6e6e;
+}
+
+.dropdown {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #f44336;
+  border-radius: 5px;
+  background-color: white;
+  position: absolute;
+  top: 100%;
+  /* faz o dropdown aparecer logo abaixo do botão */
+  left: 0;
+  width: 100%;
+  display: none;
+  /* inicialmente escondido */
+  z-index: 1;
+}
+
+.dropdown li {
+  padding: 8px 10px;
+  color: #6e6e6e;
+  cursor: pointer;
+}
+
+.dropdown li:hover {
+  background-color: #D3D3D3;
+}
+
+/* fim input container */
+
+/* Sair */
+#sair {
+  display: flex;
+  align-items: center;
+  background-color: #E5383B;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  border-radius: 10px;
+  padding: 2px 10px;
+  margin-top: 8%;
+  cursor: pointer;
+}
+
+#iconExit {
+  margin-right: 8px;
+}
+
+/* fim Sair */
+
+
+/* linha vertical */
+.linha-vertical {
+  width: 3px;
+  background-color: #ccc;
+  height: 100vh;
+}
+
+/* fim linha vertical */
+
+
+
+/* começo da main */
+#Conteudo {
+  width: 45%;
+  margin: 3% 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* começo da area de text */
+#Roteiro{
+  align-items: center;
+}
+
+#TextData{
+  margin-left: 1%;
+}
+
+#FormTitulo {
+  width: 100%;
+}
+
+#input_Titulo{
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 1.5;
+  margin: 0% 0% 7% 0%;
+}
+
+#textareaTopico1,
+#textareaTopico2 {
+  width: 100%;
+  height: 220px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.5;
+  resize: none;
+}
+
+#textareaTopico2{
+  margin-top: 4%;
+}
+/* fim da area text */
+/* fim da main */
+
+
+/* Calendário */
+#asideCalendario {
+  width: 21%;
+  margin-left: 1.3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#calendario {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  /* 7 colunas para os dias da semana */
+  grid-template-rows: 40px repeat(6, 1fr);
+  /* 1 linha fixa para os headers e 6 linhas flexíveis para os dias */
+  height: 350px;
+  /* Altura total fixa do calendário */
+}
+
+.day-header {
+  border: 1px solid #ddd;
+  background-color: #f0f0f0;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  height: 40px;
+  /* Altura fixa para os headers */
+  box-sizing: border-box;
+}
+
+.day {
+  border: 1px solid #ddd;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.day.selected {
+  background-color: #E5383B;
+  color: white;
+}
+
+#calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  margin: 5%;
+}
+
+#prev-month,
+#next-month {
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#prev-month:hover,
+#next-month:hover {
+  color: #007BFF;
+}
+
+/* fim Calendário */
+
+
+/* botão salvar */
+#sectionBtnVermelhos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 73%;
+  font-family: 'Poppins', sans-serif;
+}
+
+#btnSave {
+  cursor: pointer;
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  background-color: #E5383B;
+  border: none;
+  color: white;
+  font-size: 11px;
+  border-radius: 12px;
+  padding: 8px 20px;
+  position: relative;
+  /* Adicionado para o posicionamento do slider */
+}
+
+.material-symbols-outlined {
+  margin-right: 10px;
+}
+
+/* fim botao salvar */
+
+

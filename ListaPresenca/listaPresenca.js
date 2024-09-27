@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
 // Ativar/desativar checkbox ao clicar no botão "Selecionar Tudo"
 document.getElementById('btnSelectionAll').addEventListener('click', function() {
   const checkbox = document.getElementById('selectAllCheckbox');
