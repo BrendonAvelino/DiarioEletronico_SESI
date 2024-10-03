@@ -213,3 +213,33 @@ body {
     height: 100vh; /* Para garantir que o conteúdo ocupe a altura total da tela */
 }
 
+#alunosTitle{
+    color: #E5383B;
+}
+
+.lista-alunos {
+    width: 320px; /* Ajuste a largura do aside conforme necessário */
+    max-height: 530px; /* Defina a altura máxima desejada para a lista */
+    overflow-y: auto; /* Ativa a barra de rolagem vertical quando o conteúdo exceder o limite de altura */
+    padding: 10px;
+  }
+  
+  .lista-alunos ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .lista-alunos li {
+    padding: 5px 0; /* Espaçamento entre os itens da lista */
+    font-size: 20px; /* Tamanho do texto */
+    font-family: 'Poppins', sans-serif;
+    padding: 1% 3%;
+    color: #6D1415; /* A cor do texto */
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .lista-alunos li:hover{
+    background-color: #D3D3D3;
+  }
