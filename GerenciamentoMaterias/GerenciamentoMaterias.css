@@ -29,7 +29,7 @@ body {
     flex-direction: row;
     font-weight: 700;
     opacity: 0.6;
-    gap: 150px;
+    gap: 200px;
     font-size: 18px;
 }
 
@@ -85,7 +85,8 @@ thead {
     z-index: 1;
 }
 
-th, td {
+th,
+td {
     padding: 15px;
     text-align: left;
     font-size: 16px;
@@ -98,6 +99,7 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
     background-color: #e7e6e6;
 }
+
 /* Fim do Conteúdo da página/Tabela */
 
 
@@ -120,36 +122,46 @@ tbody tr:hover {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4); 
-  }
-  
-  .modal-content {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 50px;
     border: 1px solid #888;
     border-radius: 10px;
-    width: 20%; 
+    width: 20%;
     height: 25%;
-  }
-  
-  #titleEtapaModal{
-    margin: 0 0 20px 0 ;
-  }
+}
 
-  .close {
+.modal-content2 {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 50px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 20%;
+    height: 20%;
+}
+
+#titleEtapaModal {
+    margin: 0 0 20px 0;
+}
+
+.close {
     color: #FF0000;
     float: right;
     font-size: 26px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
 
 
@@ -162,9 +174,9 @@ button {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%; 
-    margin-bottom: 10px; 
-    display: block; 
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
 }
 
 button:hover {
@@ -177,7 +189,7 @@ button:focus {
 }
 
 .etapa-btn {
-    margin: 10px 0 0 0; 
+    margin: 10px 0 0 0;
 }
 
 #etapaText {
@@ -187,3 +199,143 @@ button:focus {
 }
 
 /* Fim do Estilo do modal */
+
+
+
+
+
+
+
+/* responsivo */
+@media screen and (max-width: 768px) {
+
+    #statsRow,
+    #statsRow,
+    tbody td:nth-child(5) {
+        display: none;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    th,
+    td {
+        padding: 15px;
+        text-align: center;
+        font-size: 17px;
+    }
+
+    .table-container {
+        margin-top: 11%;
+    }
+
+    .info {
+        flex-wrap: nowrap;
+        gap: 20px;
+        font-size: 18px;
+    }
+
+    #title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        margin: 6%;
+    }
+
+    /* Estilo do modal */
+    .modal {
+        display: none; /* Ocultar o modal inicialmente */
+        position: fixed; /* Fixo na tela */
+        z-index: 1; /* Acima de outros elementos */
+        left: 0; /* Para preencher toda a tela */
+        top: 0; /* Para preencher toda a tela */
+        width: 100%; /* Largura total da tela */
+        height: 100%; /* Altura total da tela */
+        overflow: auto; /* Habilita rolagem se necessário */
+        background-color: rgba(0, 0, 0, 0.4); /* Fundo semitransparente */
+        display: flex; /* Usar flexbox para centralizar */
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 35% auto;
+        padding: 50px;
+        border: 1px solid #888;
+        border-radius: 10px;
+        width: 35%;
+        height: 17.5%;
+    }
+
+    .modal-content2 {
+        background-color: #fefefe;
+        margin: 35% auto;
+        padding: 50px;
+        border: 1px solid #888;
+        border-radius: 10px;
+        width: 35%;
+        height: 13%;
+    }
+
+    #titleEtapaModal {
+        margin: 0 0 20px 0;
+    }
+
+    .close {
+        color: #FF0000;
+        float: right;
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+
+
+    button {
+        background-color: #E5383B;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    button:hover {
+        background-color: #6e2322;
+    }
+
+    button:focus {
+        outline: none;
+        background-color: #c22f2c;
+    }
+
+    .etapa-btn {
+        margin: 10px 0 0 0;
+    }
+
+    #etapaText {
+        background-color: #E5383B;
+        border-radius: 5px;
+        color: white;
+    }
+
+    /* Fim do Estilo do modal */
+}
