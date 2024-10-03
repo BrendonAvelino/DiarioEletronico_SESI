@@ -49,7 +49,6 @@ body {
     font-size: 15px;
     margin: 0 10px 0 10px;
 }
-
 /* fim input pesquisa */
 
 
@@ -92,7 +91,6 @@ body {
     margin-top: 8%;
     display: inline-block;
     position: relative;
-    /* necessário para o posicionamento do dropdown */
 }
 
 .custom-input {
@@ -126,11 +124,9 @@ body {
     background-color: white;
     position: absolute;
     top: 100%;
-    /* faz o dropdown aparecer logo abaixo do botão */
     left: 0;
     width: 100%;
     display: none;
-    /* inicialmente escondido */
     z-index: 1;
 }
 
@@ -207,10 +203,10 @@ body {
     margin-left: 1%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; 
+    justify-content: center; 
     position: relative;
-    height: 100vh; /* Para garantir que o conteúdo ocupe a altura total da tela */
+    height: 100vh; 
 }
 
 #alunosTitle{
@@ -218,24 +214,24 @@ body {
 }
 
 .lista-alunos {
-    width: 320px; /* Ajuste a largura do aside conforme necessário */
-    max-height: 530px; /* Defina a altura máxima desejada para a lista */
-    overflow-y: auto; /* Ativa a barra de rolagem vertical quando o conteúdo exceder o limite de altura */
+    width: 320px; 
+    max-height: 530px; 
+    overflow-y: auto; 
     padding: 10px;
   }
   
   .lista-alunos ul {
-    list-style-type: none; /* Remove os marcadores da lista */
+    list-style-type: none;
     padding: 0;
     margin: 0;
   }
   
   .lista-alunos li {
-    padding: 5px 0; /* Espaçamento entre os itens da lista */
-    font-size: 20px; /* Tamanho do texto */
+    padding: 5px 0;
+    font-size: 20px;
     font-family: 'Poppins', sans-serif;
     padding: 1% 3%;
-    color: #6D1415; /* A cor do texto */
+    color: #6D1415; 
     cursor: pointer;
     border-radius: 5px;
   }
