@@ -86,3 +86,5 @@ const dataFormatada = `${dia}/${mes}/${ano}`;
 
 // Exibe a data no elemento com id "TextData"
 document.getElementById('dataMobile').textContent = dataFormatada;
+
+

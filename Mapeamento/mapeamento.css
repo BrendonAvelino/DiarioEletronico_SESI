@@ -1,0 +1,225 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    display: flex;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Começo aside Sesi */
+  
+  #asideSesi {
+    width: 21%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #logoSesi {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  
+  
+  
+  /* input pesquisa */
+  #formPesquisa {
+    display: flex;
+    border: 2px solid #E5383B;
+    border-radius: 35px;
+    padding: 1.5%;
+    align-items: center;
+    margin: 10px 0 20px 0;
+  }
+  
+  #iconSearch {
+    background-color: #E5383B;
+    padding: 5px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+  }
+  
+  #inputPesquisa {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    margin: 0 10px 0 10px;
+  }
+  
+  /* fim input pesquisa */
+  
+  
+  
+  
+  /* box icons */
+  #aside_BoxIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  #boxIcon {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+  }
+  
+  #boxIcon:hover {
+    background-color: #D3D3D3;
+  }
+  
+  .titleBoxIcon {
+    font-size: 18px;
+    color: #E5383B;
+  }
+  
+  .imgIcon {
+    margin-right: 18px;
+  }
+  
+  /* fim box icons */
+  
+  
+  
+  /* input container */
+  .input-container {
+    margin-top: 8%;
+    display: inline-block;
+    position: relative;
+    /* necessário para o posicionamento do dropdown */
+  }
+  
+  .custom-input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #6e6e6e;
+    background-color: white;
+    border: 1px solid #f44336;
+    border-radius: 5px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    min-width: 200px;
+    justify-content: space-between;
+  }
+  
+  .custom-input .arrow {
+    font-size: 12px;
+    margin-left: 10px;
+    color: #6e6e6e;
+  }
+  
+  .dropdown {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #f44336;
+    border-radius: 5px;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    /* faz o dropdown aparecer logo abaixo do botão */
+    left: 0;
+    width: 100%;
+    display: none;
+    /* inicialmente escondido */
+    z-index: 1;
+  }
+  
+  .dropdown li {
+    padding: 8px 10px;
+    color: #6e6e6e;
+    cursor: pointer;
+  }
+  
+  .dropdown li:hover {
+    background-color: #D3D3D3;
+  }
+  
+  /* fim input container */
+  
+  /* Sair */
+  #sair {
+    display: flex;
+    align-items: center;
+    background-color: #E5383B;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    border-radius: 10px;
+    padding: 2px 10px;
+    margin-top: 8%;
+    cursor: pointer;
+  }
+  
+  #iconExit {
+    margin-right: 8px;
+  }
+  
+  /* fim Sair */
+  
+  
+  /* linha vertical */
+  .linha-vertical {
+    width: 3px;
+    background-color: #ccc;
+    height: 100vh;
+  }
+  
+  /* fim linha vertical */
+
+
+
+.conteudo .header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 65px;
+    margin-bottom: 30px;
+}
+
+.conteudo .header .fa-chair {
+    color: #00000000;
+    background-color: #00000000;
+}
+
+.conteudo {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 230px;
+    margin-right: 200px;
+    width: 50%;
+}
+
+.conteudo .header i {
+    color: #E5383B;
+}
+
+.conteudo .cadeiras {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    justify-content: center;
+    gap: 110px;
+
+}
+
+.conteudo .cadeiras .fileira {
+    display: flex;
+    gap: 40px;
+
+}
+
+.conteudo .cadeiras .fileira .primeira .cadeira i {
+    font-size: 90px;
+    color: #000000;
+}

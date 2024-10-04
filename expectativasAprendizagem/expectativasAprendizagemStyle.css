@@ -210,9 +210,9 @@ header {
 
 /* div com as expectativas */
 #areaExpectativas {
-  width: 70%;
+  width: 120%;
   overflow-y: auto;
-  max-height: 500px;
+  max-height: 480px;
   overflow-y: auto;
   padding: 10px;
 }
