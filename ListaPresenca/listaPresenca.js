@@ -134,3 +134,55 @@ document.getElementById('btnSelectionAll').addEventListener('click', function() 
     switchCheckbox.checked = selectAll; 
   });
 });
+
+
+// Ativar/desativar checkbox ao clicar no botão "Selecionar Tudo" // RESPONSIVO
+document.getElementById('btnSelectionAll-responsivo').addEventListener('click', function() {
+  const checkbox = document.getElementById('selectAllCheckbox-responsivo');
+  const switches = document.querySelectorAll('.switch input[type="checkbox"]'); 
+  
+  const selectAll = !checkbox.checked; 
+  checkbox.checked = selectAll; 
+
+  // Atualiza o estado de todos os switches
+  switches.forEach(switchCheckbox => {
+    switchCheckbox.checked = selectAll; 
+  });
+});
+
+
+//Lógica do m2enu Mobile
+document.getElementById('iconeMobile').addEventListener('click', function() {
+  const menuMobile = document.getElementById('boxIconMobile');
+  const header = document.getElementById('cabecalhoMobile');
+  const dataMobile = document.getElementById('dataMobile');
+  const iconeMobile = document.getElementById('iconeMobile');
+  
+  // Alterna a visibilidade do menu
+  if (menuMobile.style.display === 'none' || menuMobile.style.display === '') {
+      menuMobile.style.display = 'block';
+      header.style.backgroundColor = '#DA1E05';
+      dataMobile.style.color = 'white';
+      iconeMobile.style.color = 'white';
+  } else {
+      menuMobile.style.display = 'none';
+      header.style.backgroundColor = 'white';
+      dataMobile.style.color = 'white';
+      iconeMobile.style.color = '#DA1E05';
+  } 
+});
+
+
+// TextData // responsivo
+const dataAtual = new Date();
+
+// Extrai o dia, mês e ano
+const dia = String(dataAtual.getDate()).padStart(2, '0'); // Adiciona '0' se for necessário
+const mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // Adiciona 1 ao mês (começa em 0)
+const ano = dataAtual.getFullYear();
+
+// Formata a data como DD/MM/YYYY
+const dataFormatada = `${dia}/${mes}/${ano}`;
+
+// Exibe a data no elemento com id "TextData"
+document.getElementById('dataMobile').textContent = dataFormatada;

@@ -40,17 +40,17 @@
                 <h1 class="titleBoxIcon">Anotações</h1>
             </div>
 
-            <div id="boxIcon">
+            <div onclick="window.location.href='../Observacoes/Observacoes.html'" id="boxIcon">
                 <img class="imgIcon" src="icon/icon03.png" alt="">
                 <h1 class="titleBoxIcon">Observações</h1>
             </div>
 
-            <div id="boxIcon">
+            <div onclick="window.location.href='../expectativasAprendizagem/expectativasAprendizagem.html'" id="boxIcon">
                 <img class="imgIcon" src="icon/icon04.png" alt="">
                 <h1 class="titleBoxIcon">Expec. de Aprend.</h1>
             </div>
 
-            <div id="boxIcon">
+            <div onclick="window.location.href='../RoteiroVirtual/RoteiroVirtual.html'" id="boxIcon">
                 <img class="imgIcon" src="icon/icon05.png" alt="">
                 <h1 class="titleBoxIcon">Roteiro Virtual</h1>
             </div>
@@ -90,11 +90,57 @@
 
     <div class="linha-vertical"></div>
 
+        <!--menu do mobile -->
+        <header id="cabecalhoMobile">
+            <div class="flexDiv">
+                <div id="areaLogoMobile">
+                    <img class="logoMobile" src="../img/sesiLogo.png" alt="Logo sesi">
+                </div>
+                <div id="areaDataMobile">
+                    <p id="dataMobile">data</p>
+                </div>
+                <div id="areaIconeMobile">
+                    <svg id="iconeMobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+                        <path d="M16 132h416c8.8 0 16-7.2 16-16V92c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v24c0 8.8 7.2 16 16 16zm416 128H16c-8.8 0-16 7.2-16 16v24c0 8.8 7.2 16 16 16h416c8.8 0 16-7.2 16-16v-24c0-8.8-7.2-16-16-16zm0 160H16c-8.8 0-16 7.2-16 16v24c0 8.8 7.2 16 16 16h416c8.8 0 16-7.2 16-16v-24c0-8.8-7.2-16-16-16z"/>
+                      </svg>                  
+                </div>
+            </div>
+    
+            <div id="boxIconMobile">
+                <div id="botoesMobile"><img class="imgIconMobile" src="icon/Vector (1).png" alt="">
+                    <h1 class="tituloIconeMobile">Lista de Presença</h1>
+                </div>
+    
+                <div id="botoesMobile"><img class="imgIconMobile" src="icon/Vector (2).png" alt="">
+                    <h1 class="tituloIconeMobile">Anotações</h1>
+                </div>
+    
+                <div id="botoesMobile"><img class="imgIconMobile" src="icon/Vector (3).png" alt="">
+                    <h1 class="tituloIconeMobile">Expec. de Aprend.</h1>
+                </div>
+    
+            </div>
+        </header>
+        <!-- Fim do menu do mobile -->
+
     <main id="Conteudo">
 
-
+    
 
         <h1 id="title">Lista de Presença</h1>
+
+        <div id="sectionBtnVermelhos-responsivo">
+            <button id="btnSelectionAll-responsivo" class="switchAll">
+                <input type="checkbox" id="selectAllCheckbox-responsivo">
+                <span class="slider"></span>
+                <h1>Selecionar Tudo</h1>
+            </button>
+
+            <button id="btnSave-responsivo">
+                <span class="material-symbols-outlined">check</span>
+                <h1>Salvar</h1>
+            </button>
+        </div>
 
         <section id="caixasConteudo">
             <div id="table-container" class="table-container">
@@ -122,7 +168,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Andrey Hiago</td>
-                            <td>01</td>
+                            <td>Nº 01</td>
                         </tr>
 
                         <tr>
@@ -138,7 +184,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Bahbara Helen</td>
-                            <td>02</td>
+                            <td>Nº 02</td>
                         </tr>
 
                         <tr>
@@ -154,7 +200,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Brendon Avelino</td>
-                            <td>03</td>
+                            <td>Nº 03</td>
                         </tr>
 
                         <tr>
@@ -170,7 +216,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Bruno Campioni</td>
-                            <td>04</td>
+                            <td>Nº 04</td>
                         </tr>
 
                         <tr>
@@ -186,7 +232,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Clara Puerta</td>
-                            <td>05</td>
+                            <td>Nº 05</td>
                         </tr>
 
                         <tr>
@@ -202,7 +248,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Danielle Araújo</td>
-                            <td>06</td>
+                            <td>Nº 06</td>
                         </tr>
 
                         <tr>
@@ -218,7 +264,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Érika Rocha</td>
-                            <td>07</td>
+                            <td>Nº 07</td>
                         </tr>
 
                         <tr>
@@ -234,7 +280,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Felipe Luz</td>
-                            <td>08</td>
+                            <td>Nº 08</td>
                         </tr>
 
                         <tr>
@@ -250,7 +296,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Francisco Gimenes</td>
-                            <td>09</td>
+                            <td>Nº 09</td>
                         </tr>
 
                         <tr>
@@ -266,7 +312,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Gabriel Serafim</td>
-                            <td>10</td>
+                            <td>Nº 10</td>
                         </tr>
 
                         <tr>
@@ -282,7 +328,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Gabriel Silva</td>
-                            <td>11</td>
+                            <td>Nº 11</td>
                         </tr>
 
                         <tr>
@@ -298,7 +344,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Gabriel Teixeira</td>
-                            <td>12</td>
+                            <td>Nº 12</td>
                         </tr>
 
                         <tr>
@@ -314,7 +360,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Gabriela Vitória</td>
-                            <td>13</td>
+                            <td>Nº 13</td>
                         </tr>
 
                         <tr>
@@ -330,7 +376,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Gustavo Almeida</td>
-                            <td>14</td>
+                            <td>Nº 14</td>
                         </tr>
 
                         <tr>
@@ -346,7 +392,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Gustavo Lenni</td>
-                            <td>15</td>
+                            <td>Nº 15</td>
                         </tr>
 
                         <tr>
@@ -362,7 +408,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Heitor Costa</td>
-                            <td>16</td>
+                            <td>Nº 16</td>
                         </tr>
 
                         <tr>
@@ -378,7 +424,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Iasmin Gordilho</td>
-                            <td>17</td>
+                            <td>Nº 17</td>
                         </tr>
 
                         <tr>
@@ -394,7 +440,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>João Gimenes</td>
-                            <td>18</td>
+                            <td>Nº 18</td>
                         </tr>
 
                         <tr>
@@ -410,7 +456,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>João Lira</td>
-                            <td>19</td>
+                            <td>Nº 19</td>
                         </tr>
 
                         <tr>
@@ -426,7 +472,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Julia Cavalcante</td>
-                            <td>20</td>
+                            <td>Nº 20</td>
                         </tr>
 
                         <tr>
@@ -442,7 +488,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Julia Martins</td>
-                            <td>21</td>
+                            <td>Nº 21</td>
                         </tr>
 
                         <tr>
@@ -458,7 +504,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Kauã Cruz</td>
-                            <td>22</td>
+                            <td>Nº 22</td>
                         </tr>
 
                         <tr>
@@ -474,7 +520,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Kauã Lima</td>
-                            <td>23</td>
+                            <td>Nº 23</td>
                         </tr>
 
                         <tr>
@@ -490,7 +536,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Kauã Moura</td>
-                            <td>24</td>
+                            <td>Nº 24</td>
                         </tr>
 
                         <tr>
@@ -506,7 +552,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Laura França</td>
-                            <td>25</td>
+                            <td>Nº 25</td>
                         </tr>
 
                         <tr>
@@ -522,7 +568,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Leticia Farias</td>
-                            <td>26</td>
+                            <td>Nº 26</td>
                         </tr>
 
                         <tr>
@@ -538,7 +584,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Leticia Silva</td>
-                            <td>27</td>
+                            <td>Nº 27</td>
                         </tr>
 
                         <tr>
@@ -554,7 +600,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Luis Henrique</td>
-                            <td>28</td>
+                            <td>Nº 28</td>
                         </tr>
 
                         <tr>
@@ -570,7 +616,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Maria Ribas</td>
-                            <td>29</td>
+                            <td>Nº 29</td>
                         </tr>
 
                         <tr>
@@ -586,7 +632,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Mariana Valentim</td>
-                            <td>30</td>
+                            <td>Nº 30</td>
                         </tr>
 
                         <tr>
@@ -602,7 +648,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Murilo Gabriel</td>
-                            <td>31</td>
+                            <td>Nº 31</td>
                         </tr>
 
 
@@ -619,7 +665,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Pedro Henrique</td>
-                            <td>32</td>
+                            <td>Nº 32</td>
                         </tr>
 
 
@@ -637,7 +683,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Raphael Sérgio</td>
-                            <td>33</td>
+                            <td>Nº 33</td>
                         </tr>
 
 
@@ -655,7 +701,7 @@
                             </td>
                             <td>3ºAno B</td>
                             <td>Victor Gastardeli</td>
-                            <td>34</td>
+                            <td>Nº 34</td>
                         </tr>
                     </tbody>
                 </table>

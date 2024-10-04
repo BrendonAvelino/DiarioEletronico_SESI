@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expectativas de Aprendizagem - SESI</title>
+    <link rel="stylesheet" href="expectativasAprendizagemStyle.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <aside id="asideSesi">
+
+        <div id="logoSesi">
+            <img src="../img/sesiLogo.png" alt="Logo Sesi">
+        </div>
+
+        <form action="" id="formPesquisa">
+            <input type="text" id="inputPesquisa" name="Pesquisa" placeholder="Procurar">
+            <span class="material-icons" id="iconSearch">search</span>
+        </form>
+
+        <div id="aside_BoxIcon">
+
+            <div onclick="window.location.href='../ListaPresenca/listaPresenca.html'" id="boxIcon">
+                <img class="imgIcon" src="icon/icon01.png" alt="">
+                <h1 class="titleBoxIcon">Presença</h1>
+            </div>
+
+            <div id="boxIcon">
+                <img class="imgIcon" src="icon/icon02.png" alt="">
+                <h1 class="titleBoxIcon">Anotações</h1>
+            </div>
+
+            <div onclick="window.location.href='../Observacoes/Observacoes.html'" id="boxIcon">
+                <img class="imgIcon" src="icon/icon03.png" alt="">
+                <h1 class="titleBoxIcon">Observações</h1>
+            </div>
+
+            <div onclick="window.location.href='../expectativasAprendizagem/expectativasAprendizagem.html'" id="boxIcon">
+                <img class="imgIcon" src="icon/icon04.png" alt="">
+                <h1 class="titleBoxIcon">Expec. de Aprend.</h1>
+            </div>
+
+            <div onclick="window.location.href='../RoteiroVirtual/RoteiroVirtual.html'" id="boxIcon">
+                <img class="imgIcon" src="icon/icon05.png" alt="">
+                <h1 class="titleBoxIcon">Roteiro Virtual</h1>
+            </div>
+
+            <div id="boxIcon">
+                <img class="imgIcon" src="icon/icon06.png" alt="">
+                <h1 class="titleBoxIcon">Lanç. de Notas</h1>
+            </div>
+
+            <div id="boxIcon">
+                <img class="imgIcon" src="icon/icon07.png" alt="">
+                <h1 class="titleBoxIcon">Mapeamento</h1>
+            </div>
+        </div>
+
+
+        <div class="input-container">
+            <button class="custom-input" onclick="toggleDropdown()">
+                3ºB E.M - Língua Portuguesa
+                <span class="arrow">&#x25BC;</span>
+            </button>
+            <ul class="dropdown" id="dropdown">
+                <li>3ºB E.M - Língua Portuguesa</li>
+                <li>3ºA E.M - Língua Portuguesa</li>
+                <li>2ºB E.M - Língua Portuguesa</li>
+                <li>2ºA E.M - Língua Portuguesa</li>
+            </ul>
+        </div>
+
+
+        <div id="sair">
+            <i class="material-icons" id="iconExit" style="font-size: 36px;">exit_to_app</i>
+            <h1>Sair da Conta</h1>
+        </div>
+    </aside>
+
+    <div class="linha-vertical"></div>
+
+    <!--menu do mobile -->
+    <header id="cabecalhoMobile">
+        <div class="flexDiv">
+            <div id="areaLogoMobile">
+                <img class="logoMobile" src="img/sesiLogo.png" alt="Logo sesi">
+            </div>
+            <div id="areaDataMobile">
+                <p id="dataMobile">data</p>
+            </div>
+            <div id="areaIconeMobile">
+                <svg id="iconeMobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+                    <path d="M16 132h416c8.8 0 16-7.2 16-16V92c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v24c0 8.8 7.2 16 16 16zm416 128H16c-8.8 0-16 7.2-16 16v24c0 8.8 7.2 16 16 16h416c8.8 0 16-7.2 16-16v-24c0-8.8-7.2-16-16-16zm0 160H16c-8.8 0-16 7.2-16 16v24c0 8.8 7.2 16 16 16h416c8.8 0 16-7.2 16-16v-24c0-8.8-7.2-16-16-16z"/>
+                  </svg>                  
+            </div>
+        </div>
+
+        <div id="boxIconMobile">
+            <div id="botoesMobile"><img class="imgIconMobile" src="icon/Vector (1).png" alt="">
+                <h1 class="tituloIconeMobile">Lista de Presença</h1>
+            </div>
+
+            <div id="botoesMobile"><img class="imgIconMobile" src="icon/Vector (2).png" alt="">
+                <h1 class="tituloIconeMobile">Anotações</h1>
+            </div>
+
+            <div id="botoesMobile"><img class="imgIconMobile" src="icon/Vector (3).png" alt="">
+                <h1 class="tituloIconeMobile">Expec. de Aprend.</h1>
+            </div>
+
+        </div>
+    </header>
+    <!-- Fim do menu do mobile -->
+
+    <main id="mainSesi">
+
+        <div id="titulo">
+            <h1 class="tituloAprendizagem">Expectativas de Aprendizagem</h1>
+        </div>
+        <div id="areaExpectativas">
+            <div id="Expectativas">
+                <h3>1.1 Expectativa de Aprendizagem</h3><img class="setaBaixo" src="icon/setaBaixo.png"
+                    style="width: 30px; height: 30px;" alt="">
+            </div>
+            <div id="Expectativas">
+                <h3>2.1 Expectativa de Aprendizagem</h3><img class="setaBaixo" src="icon/setaBaixo.png"
+                    style="width: 30px; height: 30px;" alt="">
+            </div>
+            <div id="Expectativas">
+                <h3>3.1 Expectativa de Aprendizagem</h3><img class="setaBaixo" src="icon/setaBaixo.png"
+                    style="width: 30px; height: 30px;" alt="">
+            </div>
+            <div id="Expectativas">
+                <h3>4.1 Expectativa de Aprendizagem</h3><img class="setaBaixo" src="icon/setaBaixo.png"
+                    style="width: 30px; height: 30px;" alt="">
+            </div>
+            <div id="Expectativas">
+                <h3>5.1 Expectativa de Aprendizagem</h3><img class="setaBaixo" src="icon/setaBaixo.png"
+                    style="width: 30px; height: 30px;" alt="">
+            </div>
+        </div>
+    </main>
+
+
+    <script src="expectativasAprendizagemLogica.js"></script>
+</body>
+
+</html>
