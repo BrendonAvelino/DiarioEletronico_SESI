@@ -181,6 +181,7 @@ body {
 #titleBox{
     display: flex;
     gap: 4%;
+    color: #6D1415;
 }
 
 #textareaObservacoes{

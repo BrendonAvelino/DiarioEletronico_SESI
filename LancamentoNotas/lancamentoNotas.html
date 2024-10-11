@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lançamento de Notas - SESI</title>
+    <link rel="icon" href="../img/sesiLogo.png">
+    <link rel="stylesheet" href="lancamentoNotas.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <aside id="asideSesi">
+
+        <div id="logoSesi">
+            <img src="../img/sesiLogo.png" alt="Logo Sesi">
+        </div>
+
+        <form action="" id="formPesquisa">
+            <input type="text" id="inputPesquisa" name="Pesquisa" placeholder="Procurar">
+            <span class="material-icons" id="iconSearch">search</span>
+        </form>
+
+        <div id="aside_BoxIcon">
+
+            <div onclick="window.location.href='../ListaPresenca/listaPresenca.html'" id="boxIcon">
+                <img class="imgIcon" src="icon/icon01.png" alt="">
+                <h1 class="titleBoxIcon">Presença</h1>
+            </div>
+
+            <div onclick="window.location.href='../anotacoes/anotacoes.html'" id="boxIcon">
+                <img class="imgIcon" src="icon/icon02.png" alt="">
+                <h1 class="titleBoxIcon">Anotações</h1>
+            </div>
+
+            <div onclick="window.location.href='../Observacoes/Observacoes.html'" id="boxIcon">
+                <img class="imgIcon" src="icon/icon03.png" alt="">
+                <h1 class="titleBoxIcon">Observações</h1>
+            </div>
+
+            <div onclick="window.location.href='../expectativasAprendizagem/expectativasAprendizagem.html'" id="boxIcon">
+                <img class="imgIcon" src="icon/icon04.png" alt="">
+                <h1 class="titleBoxIcon">Expec. de Aprend.</h1>
+            </div>
+
+            <div onclick="window.location.href='../RoteiroVirtual/RoteiroVirtual.html'" id="boxIcon">
+                <img class="imgIcon" src="icon/icon05.png" alt="">
+                <h1 class="titleBoxIcon">Roteiro Virtual</h1>
+            </div>
+
+            <div id="boxIcon">
+                <img class="imgIcon" src="icon/icon06.png" alt="">
+                <h1 class="titleBoxIcon">Lanç. de Notas</h1>
+            </div>
+
+            <div onclick="window.location.href='../Mapeamento/mapeamento.html'" id="boxIcon">
+                <img class="imgIcon" src="icon/icon07.png" alt="">
+                <h1 class="titleBoxIcon">Mapeamento</h1>
+            </div>
+        </div>
+
+
+        <div class="input-container">
+            <button class="custom-input" onclick="toggleDropdown()">
+                3ºB E.M - Língua Portuguesa
+                <span class="arrow">&#x25BC;</span>
+            </button>
+            <ul class="dropdown" id="dropdown">
+                <li>3ºB E.M - Língua Portuguesa</li>
+                <li>3ºA E.M - Língua Portuguesa</li>
+                <li>2ºB E.M - Língua Portuguesa</li>
+                <li>2ºA E.M - Língua Portuguesa</li>
+            </ul>
+        </div>
+
+
+        <div id="sair">
+            <i class="material-icons" id="iconExit" style="font-size: 36px;">exit_to_app</i>
+            <h1>Sair da Conta</h1>
+        </div>
+    </aside>
+
+    <div class="linha-vertical"></div>
+
+    <main id="mainSesi">
+        <div id="titulo">
+            <h1 class="tituloLancamento">Lançamento de Notas</h1>
+        </div>
+
+        <div id="infoNotas">
+            <h3 class="info">Número</h3>
+            <h3 class="info">Nome</h3>
+            <h3 class="info">Nota 1</h3>
+            <h3 class="info">Nota 2</h3>
+            <h3 class="info">Nota 3</h3>
+            <h3 class="info">Média</h3>
+        </div>
+
+        <div id="areaNotas">
+            <div id="alunoNota1">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota2">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota3">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota4">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota5">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota6">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota7">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota8">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota9">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota10">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota11">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota12">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota13">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota14">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota15">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota16">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota17">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota18">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota19">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota20">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota21">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota22">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota23">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota24">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota25">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota26">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota27">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota28">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota29">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota30">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota31">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota32">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota33">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+            <div id="alunoNota34">
+                <h3>N°1</h3>
+                <h3>Nome</h3>
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <input class="notas" type="text" maxlength="3" placeholder="0,0">
+                <div class="media"><p>0,0</p></div>
+            </div>
+
+        </div>
+        <div id="botaoSalvar">
+            <img src="icon/ph_check-bold.png" alt="">
+            <h2>Salvar</h2>
+        </div>
+    </main>
+    
+    <script src="lancamentoNotas.js"></script>
+</body>
+</html>
