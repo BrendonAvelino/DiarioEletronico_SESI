@@ -6,10 +6,14 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   position: relative;
   display: flex;
+}
+
+header {
+  display: none;
 }
 
 
@@ -407,15 +411,18 @@ main {}
 .janela-modal .janela .titulo {
   color: #000000c2;
   font-size: 30px;
+  margin-top: 10px;
 }
 
 .janela-modal .janela .anexo {
   color: #000000a2;
   cursor: crosshair;
+  margin-top: 10px;
 }
 
 .janela-modal .janela p {
   text-align: justify;
+  margin-top: 10px;
 }
 
 
@@ -432,6 +439,7 @@ main {}
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .janela-modal .janela .salvar:hover {
@@ -549,6 +557,8 @@ header {
 
 @media (max-width: 768px) {
 
+  
+
   #mainSesi {
     width: 100%;
     padding: 10px;
@@ -557,6 +567,7 @@ header {
   
 
   .criar {
+    top: 100%;
     display: flex;
     width: 35px;
   }
@@ -605,16 +616,6 @@ header {
     display: flex;
     align-items: center;
   }
-
-  #mainSesi {
-    width: 100%;
-  }
-
-  .criar {
-    top: 100%;
-  }
-
-
 
 
   .janela-modal {

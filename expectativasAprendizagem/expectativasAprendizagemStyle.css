@@ -264,7 +264,7 @@ header {
 
 /*CSS do Menu Mobile*/
 
-@media screen and (max-width: 768px){
+@media (max-width: 768px){
 
   /* RESET CSS */
 * {
@@ -374,7 +374,7 @@ img {
 /* Alterações responsivas da própria página: */
 
    #mainSesi{
-    margin-top: 150px;
+    margin: 150px 0 0 0;
     width: 100%;
    }
 
@@ -384,10 +384,11 @@ img {
 
    #areaExpectativas{
     max-height: max-content;
+    width: 90%;
     margin-bottom: 25px;
    }
 
    #Expectativas{
-    padding: 2%;
+    width: 100%;
    }
 }

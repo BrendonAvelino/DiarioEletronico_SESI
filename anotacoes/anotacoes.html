@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anotações - SESI</title>
-    <link rel="icon" href="../img/sesiLogo.png">
     <link rel="stylesheet" href="anotacoes.css">
+    <link rel="icon" href="../img/sesiLogo.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -22,11 +22,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha384-..." crossorigin="anonymous">
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
     <aside id="asideSesi">
-
         <div id="logoSesi">
             <img src="../img/sesiLogo.png" alt="Logo Sesi">
         </div>
@@ -74,13 +77,11 @@
             </div>
         </div>
 
-
         <div class="input-container">
-            <button class="custom-input" id="dropdownButton" onclick="toggleDropdown()">
+            <button class="custom-input" onclick="toggleDropdown()">
                 3ºB E.M - Língua Portuguesa
                 <span class="arrow">&#x25BC;</span>
             </button>
-
             <ul class="dropdown" id="dropdown">
                 <li>3ºB E.M - Língua Portuguesa</li>
                 <li>3ºA E.M - Língua Portuguesa</li>
@@ -88,7 +89,6 @@
                 <li>2ºA E.M - Língua Portuguesa</li>
             </ul>
         </div>
-
 
         <div id="sair">
             <i class="material-icons" id="iconExit" style="font-size: 36px;">exit_to_app</i>
@@ -105,23 +105,23 @@
           </div>
     
           <div class="mobile-menu-icon">
-            <button onclick="menuShow()"><img class="icon" src="icon/menu.png" alt="" style="width: 25px;"
+            <button onclick="menuShow()"><img class="icon" src="menu.png" alt="" style="width: 25px;"
                 background-color="#fff"></button>
           </div>
         </nav>
         <div class="mobile-menu">
           <ul>
-            <li class="nav-item"><a href="#" class="nav-link">
+            <li class="nav-item"><a href="../ListaPresenca/listaPresenca.html" class="nav-link">
                 <img src="icon/Vector.png" alt="">
                 </i>
                 <p>Lista de presença</p>
               </a>
             </li>
     
-            <li class="nav-item"><a href="#" class="nav-link"><img src="icon/Vector (2).png" alt="">
+            <li class="nav-item"><a href="../anotacoes/anotacoes.html" class="nav-link"><img src="icon/Vector (2).png" alt="">
                 <p>Anotações</p>
               </a></li>
-            <li class="nav-item"><a href="#" class="nav-link"><img src="icon/Vector (1).png" alt="">
+            <li class="nav-item"><a href="../expectativasAprendizagem/expectativasAprendizagem.html" class="nav-link"><img src="icon/Vector (1).png" alt="">
                 <p>Expectativas de aprendizagem</p>
               </a></li>
           </ul>
