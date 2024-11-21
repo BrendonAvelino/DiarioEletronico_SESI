@@ -294,14 +294,67 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-#criarmodal .modal-content input {
+#tituloDescricao {
   border: 2px solid #E5383B;
   border-radius: 10px;
   padding: 3px;
   font-family: "Poppins", sans-serif;
 }
 
+#botaoAplicar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  background-color: #f3f7fe;
+  color: #E5383B;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 70%;
+  height: 35px;
+  transition: 0.3s;
+  margin: 15px;
+}
 
+#botaoAplicar:hover{
+  background-color: #E5383B;
+  box-shadow: 0 0 0 5px #e5383b52;
+  color: #fff;
+
+}
+
+#areaBotaoAplicar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#imagemOCR {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#escolherImg {
+  margin-top: 25px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#containerImg {
+  border-radius: 8px;
+  width: 100%;
+  height: 300px;
+}
+
+#imagemCapturada {
+  width: 100%;
+  height: 270px;
+}
 
 
 
@@ -435,7 +488,7 @@ main {}
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 .janela-modal .janela .salvar:hover {
@@ -541,7 +594,8 @@ header {
   max-height: 500px;
   /* Defina uma altura máxima para o menu quando aberto (ajuste conforme necessário) */
 }
-#mainSesi{
+
+#mainSesi {
   overflow-y: auto;
 }
 
@@ -558,21 +612,22 @@ header {
     padding: 10px;
     margin: 0;
   }
-  
+
 
   .criar {
     display: flex;
     width: 35px;
   }
-  #mainSesi{
+
+  #mainSesi {
     overflow-y: auto;
   }
-  
+
 
   .criar p {
     position: absolute;
     top: 80vw;
-    
+
     left: -100px;
     display: flex;
   }

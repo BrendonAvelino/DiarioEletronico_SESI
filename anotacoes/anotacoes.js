@@ -112,17 +112,3 @@ function menuShow() {
     document.querySelector('.icon').src = "img/xxx.png";
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -154,8 +154,19 @@
             <input id="tituloDescricao" type="text" placeholder="Título da anotação">
             <textarea id="descricao" placeholder="Descrição"></textarea>
             <div class="botoes">
-                <button onclick="saveNote()">Salvar</button>
-                <button onclick="hideCreateNote()">Cancelar</button>
+                <button id="botoesAnota" onclick="saveNote()">Salvar</button>
+                <button id="botoesAnota" onclick="hideCreateNote()">Cancelar</button>
+            </div>
+            <!-- div feita pra OCR (joao que fez ;) ) -->
+            <div class="imagemOCR">
+                <input id="escolherImg" type="file">
+                <div class="progress"></div>
+                <div id="containerImg"> 
+                    <img id="imagemCapturada" src="img/CHATIONIX (1).png">
+                </div>
+                <div id="areaBotaoAplicar">
+                    <button id="botaoAplicar">Aplicar leitura de imagem</button>
+                </div>
             </div>
         </div>
     </div>
@@ -177,7 +188,59 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2/dist/tesseract.min.js"></script>
     <script src="anotacoes.js"></script>
+    <script>
+        const selecionarArquivo = document.getElementById('escolherImg');
+        const imagemCapturada = document.getElementById('imagemCapturada');
+        const textarea = document.getElementById('descricao'); // Atualiza diretamente o textarea da descrição
+        const aplicarBtn = document.getElementById('botaoAplicar');
+        const progress = document.querySelector('.progress'); // Certifique-se de que há um elemento .progress
+
+        // Mostrar a imagem selecionada no elemento <img>
+        selecionarArquivo.onchange = () => {
+            const arquivo = selecionarArquivo.files[0];
+            if (arquivo) {
+                const imgUrl = URL.createObjectURL(arquivo);
+                imagemCapturada.src = imgUrl;
+                imagemCapturada.style.display = "block"; // Exibir imagem capturada
+            }
+        };
+
+        // Aplicar OCR ao clicar no botão "Aplicar"
+        aplicarBtn.onclick = () => {
+            const arquivo = selecionarArquivo.files[0];
+            if (!arquivo) {
+                alert('Selecione uma imagem antes de aplicar a OCR.');
+                return;
+            }
+
+            // Limpar conteúdo anterior
+            textarea.value = '';
+            progress.innerHTML = 'Iniciando OCR...';
+
+            // Usar Tesseract para reconhecer o texto em português
+            Tesseract.recognize(
+                arquivo,
+                'por', // Configurado para o idioma português
+                {
+                    logger: m => {
+                        if (m.status === 'recognizing text') {
+                            progress.innerHTML = `Reconhecendo texto: ${Math.round(m.progress * 100)}%`;
+                        } else {
+                            progress.innerHTML = m.status; // Exibir status do processamento
+                        }
+                    }
+                }
+            ).then(({ data: { text } }) => {
+                textarea.value = text; // Colocar o texto reconhecido na textarea
+                progress.innerHTML = 'Aplicação feita com sucesso!';
+            }).catch(err => {
+                console.error('Erro na OCR:', err);
+                progress.innerHTML = 'Erro ao aplicar OCR.';
+            });
+        };
+    </script>
 </body>
 
 </html>
