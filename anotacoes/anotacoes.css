@@ -12,10 +12,6 @@ body {
   display: flex;
 }
 
-header {
-  display: none;
-}
-
 
 /* Começo aside Sesi */
 
@@ -557,8 +553,6 @@ header {
 
 @media (max-width: 768px) {
 
-  
-
   #mainSesi {
     width: 100%;
     padding: 10px;
@@ -567,7 +561,6 @@ header {
   
 
   .criar {
-    top: 100%;
     display: flex;
     width: 35px;
   }
@@ -616,6 +609,16 @@ header {
     display: flex;
     align-items: center;
   }
+
+  #mainSesi {
+    width: 100%;
+  }
+
+  .criar {
+    top: 100%;
+  }
+
+
 
 
   .janela-modal {

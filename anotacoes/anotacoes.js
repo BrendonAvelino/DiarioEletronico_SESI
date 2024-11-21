@@ -109,7 +109,7 @@ function menuShow() {
     document.querySelector('.icon').src = "menu.png";
   } else {
     menuMobile.classList.add('open');
-    document.querySelector('.icon').src = "icon/xxx.png";
+    document.querySelector('.icon').src = "img/xxx.png";
   }
 }
 
