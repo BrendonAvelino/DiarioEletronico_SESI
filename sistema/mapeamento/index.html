@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapeamento - SESI</title>
+    <link rel="icon" href="../img/sesiLogo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="mapeamento.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+</head>
+
+
+<body>
+
+    <aside id="asideSesi">
+
+        <div id="logoSesi">
+            <img src="../img/sesiLogo.png" alt="Logo Sesi">
+        </div>
+
+        <form action="" id="formPesquisa">
+            <input type="text" id="inputPesquisa" name="Pesquisa" placeholder="Procurar">
+            <span class="material-icons" id="iconSearch">search</span>
+        </form>
+
+        <div id="aside_BoxIcon">
+
+            <div onclick="window.location.href='../ListaPresenca/'" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon01.png" alt="">
+                <h1 class="titleBoxIcon">Presença</h1>
+            </div>
+
+            <div onclick="window.location.href='../anotacoes/'" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon02.png" alt="">
+                <h1 class="titleBoxIcon">Anotações</h1>
+            </div>
+
+            <div onclick="window.location.href='../observacoes'" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon03.png" alt="">
+                <h1 class="titleBoxIcon">Observações</h1>
+            </div>
+
+
+
+            <div onclick="window.location.href='../roteiroVirtual/'" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon05.png" alt="">
+                <h1 class="titleBoxIcon">Roteiro Virtual</h1>
+            </div>
+
+            <div onclick="window.location.href='../notas/'" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon06.png" alt="">
+                <h1 class="titleBoxIcon">Lanç. de Notas</h1>
+            </div>
+
+            <div style="    background-color: #b1b1b1;
+" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon07.png" alt="">
+                <h1 class="titleBoxIcon">Mapeamento</h1>
+            </div>
+        </div>
+
+
+        <div class="input-container">
+            <button class="custom-input" id="dropdownButton" onclick="toggleDropdown()">
+
+            </button>
+
+            <ul class="dropdown" id="dropdown">
+
+            </ul>
+        </div>
+
+
+        <div id="sair">
+            <i class="material-icons" id="iconExit" style="font-size: 36px;">exit_to_app</i>
+            <h1>Sair da Conta</h1>
+        </div>
+    </aside>
+
+
+    <div class="conteudo">
+        <div class="header">
+            <i class="fa-solid fa-chair"></i>
+            <i class="fa-solid fa-user-tie"></i>
+            <i class="fa-solid fa-door-open"></i>
+        </div>
+
+        <div id="loading" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <p>Carregando...</p>
+        </div>
+        
+        <div class="cadeiras">
+            <div class="fileira">
+                <div class="primeira">
+                    <div class="cadeira" data-numeroCadeira="1"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="2"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="3"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="4"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="5"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="6"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                </div>
+                <div class="primeira">
+                    <div class="cadeira" data-numeroCadeira="7"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="8"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="9"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="10"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="11"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="12"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                </div>
+            </div>
+            <div class="fileira">
+                <div class="primeira">
+                    <div class="cadeira" data-numeroCadeira="13"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="14"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="15"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="16"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="17"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="18"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                </div>
+                <div class="primeira">
+                    <div class="cadeira" data-numeroCadeira="19"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="20"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="21"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="22"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="23"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="24"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                </div>
+            </div>
+            <div class="fileira">
+                <div class="primeira">
+                    <div class="cadeira" data-numeroCadeira="25"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="26"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="27"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="28"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="29"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="30"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                </div>
+                <div class="primeira">
+                    <div class="cadeira" data-numeroCadeira="31"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="32"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="33"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="34"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="35"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                    <div class="cadeira" data-numeroCadeira="36"><svg xmlns="http://www.w3.org/2000/svg" height="90px"
+                            viewBox="0 -960 960 960" width="90px" fill="#333">
+                            <path
+                                d="M200-120v-308q0-26 17-43t43-17h60v-90h-60q-26 0-43-17t-17-43v-142q0-26 17-43t43-17h440q26 0 43 17t17 43v142q0 26-17 43t-43 17h-60v90h60q26 0 43 17t17 43v308h-60v-122H260v122h-60Zm60-518h440v-142H260v142Zm120 150h200v-90H380v90ZM260-302h440v-126H260v126Zm0-336v-142 142Zm0 336v-126 126Z" />
+                        </svg></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="mapeamento.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("inputPesquisa").addEventListener("input", function () {
+            const searchTerm = this.value.toLowerCase(); // Texto pesquisado em minúsculas
+            const boxes = document.querySelectorAll("#aside_BoxIcon #boxIcon"); // Seleciona todas as divs boxIcon
+
+            boxes.forEach(box => {
+                const title = box.querySelector(".titleBoxIcon").textContent.toLowerCase(); // Texto do título em minúsculas
+                // Mostra ou esconde o box dependendo se o título contém o texto pesquisado
+                if (title.includes(searchTerm)) {
+                    box.style.display = "flex"; // Mostra o box (ou use 'block' conforme o design)
+                } else {
+                    box.style.display = "none"; // Esconde o box
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

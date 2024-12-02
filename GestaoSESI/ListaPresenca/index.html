@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Presença - SESI</title>
+    <link rel="icon" href="../img/sesiLogo.png">
+    <link rel="stylesheet" href="listaPresenca.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+</head>
+
+<body>
+    <aside id="asideSesi">
+
+        <div id="logoSesi">
+            <img src="../imgs/sesiLogo.png" alt="Logo Sesi">
+        </div>
+
+        <form action="" id="formPesquisa">
+            <input type="text" id="inputPesquisa" name="Pesquisa" placeholder="Procurar">
+            <span class="material-icons" id="iconSearch">search</span>
+        </form>
+
+        <div id="aside_BoxIcon">
+
+            <div style="    background-color: #b1b1b1;
+" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon01.png" alt="">
+                <h1 class="titleBoxIcon">Presença</h1>
+            </div>
+
+            <div onclick="window.location.href='../anotacoes/'" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon02.png" alt="">
+                <h1 class="titleBoxIcon">Anotações</h1>
+            </div>
+
+            <div onclick="window.location.href='../observacoes/'" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon03.png" alt="">
+                <h1 class="titleBoxIcon">Observações</h1>
+            </div>
+
+
+
+            <div onclick="window.location.href='../roteiroVirtual/'" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon05.png" alt="">
+                <h1 class="titleBoxIcon">Roteiro Virtual</h1>
+            </div>
+
+            <div onclick="window.location.href='../notas/'" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon06.png" alt="">
+                <h1 class="titleBoxIcon">Lanç. de Notas</h1>
+            </div>
+
+            <div onclick="window.location.href='../mapeamento/'" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon07.png" alt="">
+                <h1 class="titleBoxIcon">Mapeamento</h1>
+            </div>
+        </div>
+
+
+        <div class="input-container">
+            <button class="custom-input" id="dropdownButton" onclick="toggleDropdown()">
+
+            </button>
+
+            <ul class="dropdown" id="dropdown">
+
+            </ul>
+        </div>
+
+
+        <div id="sair">
+            <i class="material-icons" id="iconExit" style="font-size: 36px;">exit_to_app</i>
+            <h1>Sair da Conta</h1>
+        </div>
+    </aside>
+
+
+    <!--menu do mobile -->
+    <header id="cabecalhoMobile">
+        <div class="flexDiv">
+            <div id="areaLogoMobile">
+                <img class="logoMobile" src="../img/sesiLogo.png" alt="Logo sesi">
+            </div>
+            <div id="areaDataMobile">
+                <p id="dataMobile">data</p>
+            </div>
+            <div id="areaIconeMobile">
+                <svg id="iconeMobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+                    <path
+                        d="M16 132h416c8.8 0 16-7.2 16-16V92c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v24c0 8.8 7.2 16 16 16zm416 128H16c-8.8 0-16 7.2-16 16v24c0 8.8 7.2 16 16 16h416c8.8 0 16-7.2 16-16v-24c0-8.8-7.2-16-16-16zm0 160H16c-8.8 0-16 7.2-16 16v24c0 8.8 7.2 16 16 16h416c8.8 0 16-7.2 16-16v-24c0-8.8-7.2-16-16-16z" />
+                </svg>
+            </div>
+        </div>
+
+        <div id="boxIconMobile">
+            <div onclick="window.location.href='../ListaPresenca/listaPresenca.html'" id="botoesMobile"><img
+                    class="imgIconMobile" src="icon/Vector (1).png" alt="">
+                <h1 class="tituloIconeMobile">Lista de Presença</h1>
+            </div>
+
+            <div onclick="window.location.href='../anotacoes/anotacoes.html'" id="botoesMobile"><img
+                    class="imgIconMobile" src="icon/Vector (2).png" alt="">
+                <h1 class="tituloIconeMobile">Anotações</h1>
+            </div>
+
+            <div onclick="window.location.href='../expectativasAprendizagem/expectativasAprendizagem.html'"
+                id="botoesMobile"><img class="imgIconMobile" src="icon/Vector (3).png" alt="">
+                <h1 class="tituloIconeMobile">Expec. de Aprend.</h1>
+            </div>
+
+        </div>
+    </header>
+    <!-- Fim do menu do mobile -->
+
+    <main id="Conteudo">
+
+
+
+        <h1 id="title">Lista de Presença</h1>
+
+        <div id="sectionBtnVermelhos-responsivo">
+            <button id="btnSelectionAll-responsivo" class="switchAll">
+                <input type="checkbox" id="selectAllCheckbox-responsivo">
+                <span class="slider"></span>
+                <h1>Selecionar Tudo</h1>
+            </button>
+
+            <button id="btnSave-responsivo">
+                <span class="material-symbols-outlined">check</span>
+                <h1>Salvar</h1>
+            </button>
+        </div>
+
+        <section id="caixasConteudo">
+            <div id="table-container" class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Presença</th>
+                            <th>Turma</th>
+                            <th>Nome</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tbody">
+
+                        <tr>
+                            <td>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+
+                            </td>
+                            <td>3ºAno B</td>
+                            <td>Francisco Gimenes</td>
+                            <td>26/11</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div class="linha-vertical"></div>
+
+    <aside id="asideCalendario">
+
+        <div id="calendar-controls">
+            <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+            <span id="current-month">Mês Atual</span>
+            <button id="next-month"><i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <div id="calendario">
+            <div class="day-header">D</div>
+            <div class="day-header">S</div>
+            <div class="day-header">T</div>
+            <div class="day-header">Q</div>
+            <div class="day-header">Q</div>
+            <div class="day-header">S</div>
+            <div class="day-header">S</div>
+            <!-- Os dias do mês serão gerados via JavaScript -->
+        </div>
+
+        <div id="sectionBtnVermelhos">
+            <button id="btnSave">
+                <span class="material-symbols-outlined">check</span>
+                <h1>Salvar</h1>
+            </button>
+
+            <button id="btnSelectionAll" class="switchAll">
+                <input type="checkbox" id="selectAllCheckbox">
+                <span class="slider"></span>
+                <h1>Selecionar Tudo</h1>
+            </button>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+    <script src="listaPresenca.js"></script>
+    <script>
+        document.getElementById("inputPesquisa").addEventListener("input", function () {
+            const searchTerm = this.value.toLowerCase(); // Texto pesquisado em minúsculas
+            const boxes = document.querySelectorAll("#aside_BoxIcon #boxIcon"); // Seleciona todas as divs boxIcon
+
+            boxes.forEach(box => {
+                const title = box.querySelector(".titleBoxIcon").textContent.toLowerCase(); // Texto do título em minúsculas
+                // Mostra ou esconde o box dependendo se o título contém o texto pesquisado
+                if (title.includes(searchTerm)) {
+                    box.style.display = "flex"; // Mostra o box (ou use 'block' conforme o design)
+                } else {
+                    box.style.display = "none"; // Esconde o box
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Presença - SESI</title>
+    <link rel="stylesheet" href="anotacoes.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMh4f7B6f1f5D/7U0bT7u5f4c7c5f3c5c5c5c5" crossorigin="anonymous">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha384-..." crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete" />
+    <script src="https://kit.fontawesome.com/5c6f323052.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <aside id="asideSesi">
+
+        <div id="logoSesi">
+            <img src="../imgs/sesiLogo.png" alt="Logo Sesi">
+        </div>
+
+        <form action="" id="formPesquisa">
+            <input type="text" id="inputPesquisa" name="Pesquisa" placeholder="Procurar">
+            <span class="material-icons" id="iconSearch">search</span>
+        </form>
+
+        <div id="aside_BoxIcon">
+
+            <div onclick="window.location.href='../ListaPresenca/'" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon01.png" alt="">
+                <h1 class="titleBoxIcon">Presença</h1>
+            </div>
+
+            <div style="    background-color: #b1b1b1;
+" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon02.png" alt="">
+                <h1 class="titleBoxIcon">Anotações</h1>
+            </div>
+
+            <div onclick="window.location.href='../observacoes/'" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon03.png" alt="">
+                <h1 class="titleBoxIcon">Observações</h1>
+            </div>
+
+            <div onclick="window.location.href='../roteiroVirtual/'" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon05.png" alt="">
+                <h1 class="titleBoxIcon">Roteiro Virtual</h1>
+            </div>
+
+            <div onclick="window.location.href='../notas/'" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon06.png" alt="">
+                <h1 class="titleBoxIcon">Lanç. de Notas</h1>
+            </div>
+
+            <div onclick="window.location.href='../mapeamento/'" id="boxIcon">
+                <img class="imgIcon" src="../icon/icon07.png" alt="">
+                <h1 class="titleBoxIcon">Mapeamento</h1>
+            </div>
+        </div>
+
+
+        <div class="input-container">
+            <button class="custom-input" id="dropdownButton" onclick="toggleDropdown()">
+
+            </button>
+
+            <ul class="dropdown" id="dropdown">
+
+            </ul>
+        </div>
+
+
+        <div id="sair">
+            <i class="material-icons" id="iconExit" style="font-size: 36px;">exit_to_app</i>
+            <h1>Sair da Conta</h1>
+        </div>
+    </aside>
+
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <img src="../img/sesiLogo.png" alt="" style="width: 100%;">
+            </div>
+
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="menu.png" alt="" style="width: 25px;"
+                        background-color="#fff"></button>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="#" class="nav-link">
+                        <img src="../img/Vector.png" alt="">
+                        </i>
+                        <p>Lista de presença</p>
+                    </a>
+                </li>
+
+                <li class="nav-item"><a href="#" class="nav-link"><img src="../img/Vector (2).png" alt="">
+                        <p>Anotações</p>
+                    </a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><img src="../img/Vector (1).png" alt="">
+                        <p>Expectativas de aprendizagem</p>
+                    </a></li>
+            </ul>
+
+
+        </div>
+    </header>
+
+
+
+
+    <div class="anotacao"></div>
+    <div class="criar" onclick="showCreateNote('insert')">
+        <p>Criar anotação +</p>
+    </div>
+
+    <main id="mainSesi">
+        <div class="titulo">Anotações</div>
+        <div id="anotacoesDiv">
+
+        </div>
+    </main>
+
+    <!-- Modal para criar anotação -->
+    <!-- <div id="criarmodal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Criar Anotação</h2>
+            <input id="tituloDescricao" type="text" placeholder="Título da anotação">
+            <textarea id="descricao" placeholder="Descrição"></textarea>
+            <div class="botoes">
+                <button id="botoesAnota" onclick="saveNote()">Salvar</button>
+                <button id="botoesAnota" onclick="hideCreateNote()">Cancelar</button>
+            </div> -->
+            <!-- div feita pra OCR (joao que fez ;) ) -->
+            <!-- <div class="imagemOCR">
+                <input id="escolherImg" type="file"> -->
+                <!-- <div class="progress"></div> -->
+                <!-- <div id="containerImg">
+                    <img id="imagemCapturada" src="">
+                </div>
+                <div id="areaBotaoAplicar">
+                    <button id="botaoAplicar">Aplicar leitura de imagem</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Modal para editar anotação -->
+    <div class="janela-modal" id="janela-modal">
+        <div class="janela">
+            <i onclick="hideCreateNote()" class="fa-solid fa-x fa-xl"></i>
+            <div class="data" id="janelaModalDatas">11/12/2006</div>
+            <form action="" id="FormTitulo">
+                <input type="text" id="input_Titulo" placeholder="Titulo">
+            </form>
+            <div id="topico1">
+                <textarea class="textarea" name="topico1" id="textareaTopico1" placeholder="Anotação"></textarea>
+            </div>
+            <div id="fileTrigger" class="anexo">Adicionar anotação a partir de imagem <i
+                    class="fa-solid fa-paperclip"></i></div>
+            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+            <div class="progress"></div>
+            <button class="salvar" id="salvar"> <i class="fa-solid fa-check"></i> Salvar</button>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2/dist/tesseract.min.js"></script>
+
+    <script>
+        const selecionarArquivo = document.getElementById('fileInput');
+        // const imagemCapturada = document.getElementById('imagemCapturada');
+        const textarea = document.getElementById('textareaTopico1'); // Atualiza diretamente o textarea da descrição
+        // const aplicarBtn = document.getElementById('botaoAplicar');
+        const progress = document.querySelector('.progress'); // Certifique-se de que há um elemento .progress
+
+        // Mostrar a imagem selecionada no elemento <img>
+        selecionarArquivo.onchange = () => {
+            console.log('oi')
+            const arquivo = selecionarArquivo.files[0];
+            if (!arquivo) {
+                alert('Selecione uma imagem antes de aplicar a OCR.');
+                return;
+            }
+
+            // Limpar conteúdo anterior
+            textarea.value = '';
+            progress.innerHTML = 'Iniciando OCR...';
+
+            // Usar Tesseract para reconhecer o texto em português
+            Tesseract.recognize(
+                arquivo,
+                'por', // Configurado para o idioma português
+                {
+                    logger: m => {
+                        if (m.status === 'recognizing text') {
+                            progress.innerHTML = `Reconhecendo texto: ${Math.round(m.progress * 100)}%`;
+                        } else {
+                            progress.innerHTML = m.status; // Exibir status do processamento
+                        }
+                    }
+                }
+            ).then(({ data: { text } }) => {
+                textarea.value = text; // Colocar o texto reconhecido na textarea
+                progress.innerHTML = 'Aplicação feita com sucesso!';
+                selecionarArquivo.value = ''; // Redefinir o valor do input
+            }).catch(err => {
+                console.error('Erro na OCR:', err);
+                progress.innerHTML = 'Erro ao aplicar OCR.';
+                selecionarArquivo.value = ''; // Redefinir o valor do input mesmo em caso de erro
+            });
+
+        };
+
+        // Aplicar OCR ao clicar no botão "Aplicar"
+        // aplicarBtn.onclick = () => {
+        //     const arquivo = selecionarArquivo.files[0];
+        //     if (!arquivo) {
+        //         alert('Selecione uma imagem antes de aplicar a OCR.');
+        //         return;
+        //     }
+
+        //     // Limpar conteúdo anterior
+        //     textarea.value = '';
+        //     progress.innerHTML = 'Iniciando OCR...';
+
+        //     // Usar Tesseract para reconhecer o texto em português
+        //     Tesseract.recognize(
+        //         arquivo,
+        //         'por', // Configurado para o idioma português
+        //         {
+        //             logger: m => {
+        //                 if (m.status === 'recognizing text') {
+        //                     progress.innerHTML = `Reconhecendo texto: ${Math.round(m.progress * 100)}%`;
+        //                 } else {
+        //                     progress.innerHTML = m.status; // Exibir status do processamento
+        //                 }
+        //             }
+        //         }
+        //     ).then(({ data: { text } }) => {
+        //         textarea.value = text; // Colocar o texto reconhecido na textarea
+        //         progress.innerHTML = 'Aplicação feita com sucesso!';
+        //     }).catch(err => {
+        //         console.error('Erro na OCR:', err);
+        //         progress.innerHTML = 'Erro ao aplicar OCR.';
+        //     });
+        // };
+
+        document.getElementById("inputPesquisa").addEventListener("input", function () {
+    const searchTerm = this.value.toLowerCase(); // Texto pesquisado em minúsculas
+    const boxes = document.querySelectorAll("#aside_BoxIcon #boxIcon"); // Seleciona todas as divs boxIcon
+
+    boxes.forEach(box => {
+        const title = box.querySelector(".titleBoxIcon").textContent.toLowerCase(); // Texto do título em minúsculas
+        // Mostra ou esconde o box dependendo se o título contém o texto pesquisado
+        if (title.includes(searchTerm)) {
+            box.style.display = "flex"; // Mostra o box (ou use 'block' conforme o design)
+        } else {
+            box.style.display = "none"; // Esconde o box
+        }
+    });
+});
+
+    </script>
+    <script src="anotacoes.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página principal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+</head>
+
+<body style="background-color: #F2F2F2;">
+    <script src="https://kit.fontawesome.com/5c6f323052.js" crossorigin="anonymous"></script>
+    <header>
+        <div class="logo" id="logo">
+            <img src="imgs/sesiLogo.png" alt="">
+        </div>
+        <p class="texto" id="data"></p>
+        <div class="infosHeader">
+            <div class="infos">
+                <p class="title" id="nomeCordenador"></p>
+                <p class="sub" id="cargo">Cordenador(a)</p>
+            </div>
+            <i id="botaoDeslog" class="material-icons" style="font-size: 30px;">exit_to_app</i>
+        </div>
+    </header>
+    <main>
+        <aside id="professoresDiv">
+            <h2 class="titleAside">Professores</h2>
+            <div class="lista" id="listaProfessores">
+                <div class="professor" id="cadastrado">
+                    <h3 class="title">Ordem Alfabetica</h3>
+                </div>
+                <div class="professor" id="cadastrado">
+                    <h3 class="title">Ordem Alfabetica</h3>
+                </div>
+                <div class="professor" id="cadastrado">
+                    <h3 class="title">Ordem Alfabetica</h3>
+                </div>
+                <div class="professor" id="cadastrado">
+                    <h3 class="title">Ordem Alfabetica</h3>
+                </div>
+                <div class="professor" id="cadastrado">
+                    <h3 class="title">Ordem Alfabetica</h3>
+                </div>
+                <div class="professor" id="cadastrado">
+                    <h3 class="title">Ordem Alfabetica</h3>
+                </div>
+                <div class="professor" id="cadastrado">
+                    <h3 class="title">Ordem Alfabetica</h3>
+                </div>
+                <div class="professor" id="cadastrado">
+                    <h3 class="title">Ordem Alfabetica</h3>
+                </div>
+                <div class="professor" id="cadastrado">
+                    <h3 class="title">Ordem Alfabetica</h3>
+                </div>
+                <div class="professor" id="cadastrado">
+                    <h3 class="title">Ordem Alfabetica</h3>
+                </div>
+                <div class="professor" id="cadastrado">
+                    <h3 class="title">Ordem Alfabetica</h3>
+                </div>
+                <div class="professor" id="cadastrado">
+                    <h3 class="title">Ordem Alfabetica</h3>
+                </div>
+                <div class="professor" id="naoCadastrado">
+                    <i class="fa-solid fa-circle-plus fa-xl"></i>
+                </div>
+            </div>
+        </aside>
+        <aside id="centralDiv">
+            <div class="recadosDiv">
+                <h2 class="titleAside">Recados</h2>
+                <div class="recados">
+                    <div class="recado" id="ultimoRecado">
+                        <h4 class="title">Ultimo Recado</h4>
+                        <p class="text">Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum</p>
+                        <div class="anexo">
+                            <i class="fa-solid fa-paperclip"></i>
+                            <p>Anexo</p>
+                        </div>
+                    </div>
+                    <div class="recado" id="novoRecado">
+                        <i class="fa-solid fa-calendar-plus fa-2xl"></i>
+                    </div>
+                </div>
+
+            </div>
+            <div class="frases">
+                    <p class="text" id="frase"></p>
+                <img src="imgs/undraw_teacher_re_sico.svg" alt="">
+            </div>
+        </aside>
+        <aside id="salasDiv">
+            <h2 class="titleAside">Turmas</h2>
+            <div id="lista" class="turmas">
+                
+            </div>
+            </div>
+        </aside>
+    </main>
+    <div class="overlay" id="overlay"></div>
+    <div class="model" id="modalProfessores">
+        <div class="textos">
+            <h2 class="titulo">VAMOS CADASTRAR UM NOVO DOCENTE</h2>
+            <div style="display: flex; justify-content: center;" class="img">
+                <img width="70%" style="align-self: center;" src="imgs/sesibranco.png" alt="Logo sesi">
+            </div>
+        </div>
+        <div class="formularioInfos" id="formularioInfos">
+            <div class="iconDiv">
+                <i style="display: none;" id="exclu" class="fa-solid fa-trash fa-2xl"></i>  
+                <span class="tooltip">Apagar Professor</span>
+            </div>
+            <div style="display: flex; gap: 40px; justify-content: center; align-items: center;">
+                <h2 class="titulo" id="titulo">DADOS PESSOAIS</h2>
+            </div>
+            <div class="formulario" id="formulario">
+                <div class="formRow row2">
+                    <div class="formGroup">
+                        <label for="Nome">Nome</label>
+                        <input id="Nome" placeholder="Escreva aqui" type="text">
+                    </div>
+                    <div class="formGroup">
+                        <label for="Sobrenome">Sobrenome</label>
+                        <input id="Sobrenome" placeholder="Escreva aqui" type="text">
+                    </div>
+                </div>
+                <div class="formRow">
+                    <div class="formGroup">
+                        <label for="EmailPessoal">Email Pessoal</label>
+                        <input id="EmailPessoal" placeholder="Escreva aqui" type="email">
+                    </div>
+                </div>
+                <div class="formRow">
+                    <div class="formGroup">
+                        <label for="Numero">Numero de celular (com DDD)</label>
+                        <input id="Numero" placeholder="11912345678" type="number">
+                    </div>
+                </div>
+                <div class="formRow">
+                    <div class="formGroup">
+                        <label for="CPF">CPF</label>
+                        <input id="CPF" placeholder="Escreva sem pontuação" type="number">
+                    </div>
+                </div>
+                <div class="botoes">
+                    <button id="buttonNext" type="submit">Próximo</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="model" id="modalRecados">
+        <p class="data" id="dataRecado">01/10/21</p>
+        <div class="conteudoRecado" id="conteudoRecado">
+            <h3 class="title" id="tituloRecado">Titulo</h3>
+            <div class="conteudoTexto" id="conteudoTexto">
+                <p class="textoRecado" id="textoRecado">Mussum Ipsum, cacilds vidis litro abertis.  Quem num gosta di mé, boa gentis num é. Leite de capivaris, leite de mula manquis sem cabeça. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.</p>
+                <p class="addAnexo" id="addAnexo">Adicionar anexo</p>
+            </div>
+        </div>
+        <div id="salvar">
+            <i class="material-icons" id="iconDoneAll " style="font-size: 35px;">done_all</i>
+            <p>Salvar</p>
+        </div>
+    </div>
+
+    <script src="redirecionador.js"></script>
+    <script src="pegarData.js"></script>
+    <script src="pegarInfosCord.js"></script>
+    <script src="frases.js"></script>
+</body>
+
+</html>

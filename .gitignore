@@ -1,1 +1,15 @@
-node_modules
+# Ignorar pastas do sistema
+Thumbs.db
+.DS_Store
+
+# Ignorar pastas temporárias
+*.log
+*.tmp
+.cache/
+.vscode/
+node_modules/
+*.bak
+
+# Ignorar arquivos do Windows
+AppData/
+OneDrive/

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Matérias - SESI</title>
+    <link rel="icon" href="img/sesiLogo.png">
+    <link rel="stylesheet" href="gerMaterias.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+	<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+    
+</head>
+
+<body>
+    <header id="headerSESI">
+        <div class="logo">
+            <img id="sesiLogo" src="img/sesiLogo.png" alt="SESI Logo">
+        </div>
+        <div class="info">
+            <span id="nomeProfessor"></span>
+            <div id="TextData"></div>
+        </div>
+        <i id="botaoDeslog" class="material-icons" style="font-size: 36px;">exit_to_app</i>
+    </header>
+
+    <main id="Conteudo">
+        <h1 id="title">Gerenciamento de matérias</h1>
+
+        <section id="caixasConteudo">
+            <div id="table-container" class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Série</th>
+                            <th>Turma</th>
+                            <th>Grau</th>
+                            <th>Matéria</th>
+                            <th id="statsRow">Status</th> <!-- Adicionado para a coluna de status -->
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal com 3 Etapas -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <h2 id="titleEtapaModal">Selecione uma Etapa <span class="close close3">&times;</span> </h2>
+            <div class="button-group">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal com 2 Etapas -->
+    <!-- <div id="modal2" class="modal">
+        <div class="modal-content2">
+            <h2 id="titleEtapaModal">Selecione uma Etapa <span class="close close2">&times;</span></h2>
+            <div class="button-group">
+                <button id="etapa1-2" class="etapa-btn" value="1">1º etapa</button>
+                <button id="etapa2-2" class="etapa-btn" value="2">2º etapa</button>
+            </div>
+        </div>
+    </div> -->
+
+    <script src="capturarData.js"></script>
+    <script src="carregarDadosProf.js"></script>
+</body>
+
+</html>

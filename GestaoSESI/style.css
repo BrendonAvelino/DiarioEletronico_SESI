@@ -1,0 +1,693 @@
+/* Importando a fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+/* Estilo de rolagem para navegadores Webkit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #54595E;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+}
+
+input,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    height: 15%;
+}
+
+#data {
+    font-weight: 600;
+    color: #54595E;
+}
+
+.infosHeader {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+}
+
+.infosHeader i {
+    color: #E5383B;
+
+}
+
+.infosHeader .infos {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.title,
+.sub,
+.titleAside {
+    font-weight: 600;
+}
+
+.infosHeader .infos .title,
+.infosHeader .infos .sub {
+    font-size: 18px;
+}
+
+.infosHeader .infos .sub {
+    color: #54595E;
+}
+
+main {
+    display: flex;
+    align-items: end;
+    gap: 14px;
+    padding: 0 34px;
+    height: 78%;
+}
+
+aside .titleAside {
+    font-size: 32px;
+}
+
+#listaProfessores {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding-bottom: 10px;
+}
+
+#professoresDiv {
+    width: 25%;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+
+}
+
+div.professor {
+    background-color: #ffffff;
+    border: 1px solid #DDDCDC;
+    border-radius: 8px 8px 8px 0;
+    padding: 12px 38px;
+    box-shadow: -5px 12px 12px rgba(0, 0, 0, 0.25);
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 80%;
+    text-align: center;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    /* Adiciona transição */
+}
+
+div.professor:hover {
+    box-shadow: -5px 6px 12px rgba(0, 0, 0, 0.25);
+    background-color: #f0f0f0;
+    /* Alteração opcional de cor ao passar o mouse */
+}
+
+#naoCadastrado {
+    background-color: #B1A7A6;
+    padding: 25px 0;
+}
+#naoCadastradoM {
+    background-color: #dadada;
+    /* padding: 25px 0; */
+    width: 100%;
+}
+
+#centralDiv {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding: 0 40px;
+}
+
+.frases {
+    display: flex;
+    gap: 40px;
+    font-size: 24px;
+    font-weight: 600;
+    width: 100%;
+    justify-content: center;
+    align-items: end;
+}
+
+.frases img {
+    width: 250px;
+}
+
+.frases .text {
+    width: 280px;
+    padding-bottom: 40px;
+}
+
+.recado {
+    width: 300px;
+    height: 200px;
+    background-color: #ffffff;
+    box-shadow: -12px 12px 12px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    font-size: 18px;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    /* Adiciona transição */
+    cursor: pointer;
+}
+
+.recado:hover {
+    box-shadow: -5px 6px 12px rgba(0, 0, 0, 0.25);
+    background-color: #f0f0f0;
+    /* Alteração opcional de cor ao passar o mouse */
+}
+
+.recados {
+    display: flex;
+    gap: 40px;
+}
+
+.recadosDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#ultimoRecado {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: start;
+}
+
+.anexo {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.recado .title {
+    font-weight: 600;
+}
+
+i.material-icons {
+    cursor: pointer;
+}
+
+#salasDiv {
+    width: 25%;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    gap: 35px;
+}
+
+.turmas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    gap: 13px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding-bottom: 10px;
+}
+
+.turma {
+    background-color: #ffffff;
+    display: flex;
+    align-items: start;
+    width: 80%;
+    justify-content: space-between;
+    box-shadow: -5px 12px 12px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    /* Adiciona transição */
+    padding: 13px 0 13px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.turma:hover {
+    box-shadow: -5px 6px 12px rgba(0, 0, 0, 0.25);
+    background-color: #f0f0f0;
+    /* Alteração opcional de cor ao passar o mouse */
+}
+
+.turmaInfos {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 8px;
+}
+
+.turmaInfo {
+    border-radius: 8px 0 0 8px;
+    padding: 0 10px;
+    font-weight: 500;
+}
+
+.EM {
+    background-color: #819DFF;
+}
+
+.tarde {
+    background-color: #F9CB86;
+}
+
+.manha {
+    background-color: #B2F986;
+}
+
+.fund {
+    background-color: #FF9081;
+}
+
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: none;
+}
+
+.model {
+    display: none;
+    width: 80%;
+    height: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.formulario button {
+    border-radius: 8px;
+    background-color: #A4161A;
+    color: #ffffff;
+    border: none;
+    padding: 16px 55px;
+    font-size: 16px;
+}
+
+.formulario {
+    width: 600px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    height: 70%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    justify-content: space-between;
+}
+
+.scrollAulas {
+    width: 600px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    height: 90%;
+    overflow-y: auto;
+    scrollbar-width: none;
+
+}
+
+.scrollAulasSelect {
+    width: 600px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: end;
+    height: 90%;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.formRow {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+}
+.textos .titulo{
+    font-size: 48px;
+    font-family: "Bebas Neue", sans-serif;
+    width: 70%;
+    color: #ffffff;
+}
+
+.textos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #A4161A;
+    align-items: center;
+    width: 30%;
+}
+
+.formGroup input {
+    border-radius: 8px;
+    border: #54595E 1px solid;
+    padding: 16px;
+    width: 100%;
+}
+
+.formRow {
+    gap: 10px;
+}
+
+.formularioInfos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 90px;
+    background-color: #fff;
+    gap: 20px;
+    width: 70%;
+}
+
+.formularioInfos .titulo {
+    font-weight: 600;
+}
+
+.disabled {
+    background-color: #d1d1d1;
+}
+
+.maisdeum {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.formGroup select {
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 16px;
+}
+
+select.materia {
+    width: 100%;
+}
+
+.materiaGroup {
+    width: 75%;
+}
+
+.turmaGroup {
+    width: 20%;
+}
+
+/* .soant{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+} */
+
+#modalRecados {
+    background-color: #fff;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    padding: 46px 68px;
+}
+#modalRecados .data{
+    font-size: 24px;
+}
+
+/* Sair */
+#salvar {
+    display: flex;
+    align-items: center;
+    background-color: #E5383B;
+    color: white;
+    gap: 12px;
+    border-radius: 8px;
+    padding: 10px 25px;
+
+    cursor: pointer;
+}
+
+#salvar p {
+    font-size: 1.125rem;
+}
+
+#iconDoneAll {
+    margin-right: 8px;
+}
+
+.conteudoRecado {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 35px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    height: 80%;
+    padding-top: 30px;
+
+}
+
+.conteudoRecado .title {
+    font-size: 3rem;
+}
+
+.conteudoTexto {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 27px;
+    font-size: 24px;
+}
+
+.conteudoTexto .addAnexo {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    main {
+        flex-direction: column;
+    }
+
+    #centralDiv,
+    #salasDiv,
+    #professoresDiv {
+        width: 100%;
+    }
+
+    .recados {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+div.professor:hover,
+.recado:hover,
+.turma:hover {
+    transform: scale(1.02);
+}
+
+button:focus,
+input:focus {
+    outline: 2px solid #A4161A;
+    outline-offset: 4px;
+}
+
+.model {
+    display: none;
+    width: 80%;
+    height: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Ajuste o modal para telas pequenas */
+@media (max-width: 768px) {
+    .model {
+        width: 95%;
+        height: auto;
+        max-height: 90%;
+        padding: 15px;
+        border-radius: 8px;
+    }
+}
+
+/* Ajuste dos elementos internos do modal */
+.formulario {
+    width: 100%;
+    /* Use 100% para ajustar ao modal */
+    gap: 10px;
+    padding: 10px;
+}
+
+.scrollAulas,
+.scrollAulasSelect {
+    width: 100%;
+    /* Ajuste para 100% para responsividade */
+    max-height: 70vh;
+    /* Limite de altura para evitar que ocupe a tela toda */
+}
+
+.formularioInfos {
+    padding: 0 10px;
+    gap: 10px;
+}
+
+.textos .titulo {
+    font-size: 2rem;
+    /* Reduza o tamanho da fonte em telas menores */
+}
+
+/* Altere o layout de colunas para linhas em telas pequenas */
+@media (max-width: 768px) {
+    .formulario {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .formularioInfos {
+        width: 100%;
+        padding: 0;
+    }
+
+    .textos {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .textos .titulo {
+        font-size: 1.5rem;
+    }
+}
+
+#exclu {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    cursor: pointer;
+    transition: opacity 0.3s ease, color 0.3s ease; 
+}
+
+#exclu:hover {
+    color: red;
+}
+
+.noview {
+    display: none;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    /* Ajuste a posição conforme necessário */
+    right: 0px;
+    top: 28px;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.iconDiv:hover .tooltip {
+    display: block;
+}
