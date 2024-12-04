@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anotações - SESI</title>
-    <link rel="icon" href="../img/sesiLogo.png">
+    <title>Lista de Presença - SESI</title>
     <link rel="stylesheet" href="anotacoes.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -152,11 +151,11 @@
                 <button id="botoesAnota" onclick="saveNote()">Salvar</button>
                 <button id="botoesAnota" onclick="hideCreateNote()">Cancelar</button>
             </div> -->
-    <!-- div feita pra OCR (joao que fez ;) ) -->
-    <!-- <div class="imagemOCR">
+            <!-- div feita pra OCR (joao que fez ;) ) -->
+            <!-- <div class="imagemOCR">
                 <input id="escolherImg" type="file"> -->
-    <!-- <div class="progress"></div> -->
-    <!-- <div id="containerImg">
+                <!-- <div class="progress"></div> -->
+                <!-- <div id="containerImg">
                     <img id="imagemCapturada" src="">
                 </div>
                 <div id="areaBotaoAplicar">
@@ -268,19 +267,19 @@
         // };
 
         document.getElementById("inputPesquisa").addEventListener("input", function () {
-            const searchTerm = this.value.toLowerCase(); // Texto pesquisado em minúsculas
-            const boxes = document.querySelectorAll("#aside_BoxIcon #boxIcon"); // Seleciona todas as divs boxIcon
+    const searchTerm = this.value.toLowerCase(); // Texto pesquisado em minúsculas
+    const boxes = document.querySelectorAll("#aside_BoxIcon #boxIcon"); // Seleciona todas as divs boxIcon
 
-            boxes.forEach(box => {
-                const title = box.querySelector(".titleBoxIcon").textContent.toLowerCase(); // Texto do título em minúsculas
-                // Mostra ou esconde o box dependendo se o título contém o texto pesquisado
-                if (title.includes(searchTerm)) {
-                    box.style.display = "flex"; // Mostra o box (ou use 'block' conforme o design)
-                } else {
-                    box.style.display = "none"; // Esconde o box
-                }
-            });
-        });
+    boxes.forEach(box => {
+        const title = box.querySelector(".titleBoxIcon").textContent.toLowerCase(); // Texto do título em minúsculas
+        // Mostra ou esconde o box dependendo se o título contém o texto pesquisado
+        if (title.includes(searchTerm)) {
+            box.style.display = "flex"; // Mostra o box (ou use 'block' conforme o design)
+        } else {
+            box.style.display = "none"; // Esconde o box
+        }
+    });
+});
 
     </script>
     <script src="anotacoes.js"></script>

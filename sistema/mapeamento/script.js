@@ -164,19 +164,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         const cadeiras = document.querySelectorAll('.cadeira');
 
-        let turmaEscolha = localStorage.getItem('turmaPick')
+        let turmaEscolha = localStorage.getItem('professorTurmaEscolhida')
 
-        const { data: turmaID, error: turmaIDError } = await supabaseClient
-            .from('turmas')
-            .select('*')
-            .eq('nome_turma', turmaEscolha);
+        // const { data: turmaID, error: turmaIDError } = await supabaseClient
+        //     .from('turmas')
+        //     .select('*')
+        //     .eq('nome_turma', turmaEscolha);
 
         // console.log(turmaID)     
 
         const { data: alunos, error: turmaError } = await supabaseClient
             .from('alunos')
             .select('id, nome')
-            .eq('turma_id', turmaID[0].id)
+            .eq('turma_id', turmaEscolha)
 
         // console.log(alunos)
 
